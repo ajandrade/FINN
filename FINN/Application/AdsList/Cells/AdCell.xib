@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGW-IW-jGV">
                         <rect key="frame" x="0.0" y="0.0" width="179" height="240"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-6I-d59">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-6I-d59" customClass="AdPhotoImageView" customModule="FINN" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="179" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="yNe-lu-lac"/>
@@ -46,7 +46,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4M-Bo-2fO">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4M-Bo-2fO" customClass="PriceSemiRoundedView" customModule="FINN" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="148" width="80.5" height="37"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -59,6 +59,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iG9-xJ-UZc">
+                                <rect key="frame" x="145" y="12" width="24" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="DiN-zd-2yw"/>
+                                    <constraint firstAttribute="height" constant="20" id="jt1-ob-Jt9"/>
+                                </constraints>
+                                <state key="normal" image="HeartDeselected"/>
+                                <connections>
+                                    <action selector="onFavouritePressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="jsj-oR-TpZ"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="N1t-j9-PF4">
+                                <rect key="frame" x="148" y="13" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="qMe-Ag-09o"/>
+                                    <constraint firstAttribute="width" constant="20" id="twg-jA-6eO"/>
+                                </constraints>
+                                <color key="color" red="0.71372549019607845" green="0.94509803921568625" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -69,13 +88,17 @@
                             <constraint firstAttribute="trailing" secondItem="lIF-Ii-egj" secondAttribute="trailing" constant="4" id="DLL-X6-b9C"/>
                             <constraint firstItem="OfC-Bp-vAy" firstAttribute="leading" secondItem="l4M-Bo-2fO" secondAttribute="leading" constant="7" id="G6r-Lo-Kmv"/>
                             <constraint firstAttribute="bottom" secondItem="lIF-Ii-egj" secondAttribute="bottom" constant="5" id="J9s-vK-oiK"/>
+                            <constraint firstAttribute="trailing" secondItem="N1t-j9-PF4" secondAttribute="trailing" constant="11" id="P0b-8S-l76"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="bottom" secondItem="tIB-6I-d59" secondAttribute="bottom" id="QPY-5u-ALN"/>
+                            <constraint firstAttribute="trailing" secondItem="iG9-xJ-UZc" secondAttribute="trailing" constant="10" id="bHC-5I-riq"/>
                             <constraint firstItem="Dd2-PQ-ELv" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="1" id="dYN-8A-ioz"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="width" secondItem="tIB-6I-d59" secondAttribute="width" multiplier="0.45" id="gBV-gE-fSA"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="centerY" secondItem="OfC-Bp-vAy" secondAttribute="centerY" id="hxG-qY-unZ"/>
                             <constraint firstAttribute="trailing" secondItem="Dd2-PQ-ELv" secondAttribute="trailing" constant="4" id="nF0-iR-Mvx"/>
                             <constraint firstItem="tIB-6I-d59" firstAttribute="top" secondItem="EGW-IW-jGV" secondAttribute="top" id="urW-aP-Rqa"/>
                             <constraint firstItem="tIB-6I-d59" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" id="vHl-51-VP0"/>
+                            <constraint firstItem="iG9-xJ-UZc" firstAttribute="top" secondItem="EGW-IW-jGV" secondAttribute="top" constant="12" id="vQt-Iq-CAR"/>
+                            <constraint firstItem="N1t-j9-PF4" firstAttribute="top" secondItem="EGW-IW-jGV" secondAttribute="top" constant="13" id="vVv-BC-lgz"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="leading" secondItem="tIB-6I-d59" secondAttribute="leading" id="yFc-Vr-jDY"/>
                         </constraints>
                     </view>
@@ -90,16 +113,19 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="179" height="240"/>
             <connections>
-                <outlet property="adImageView" destination="tIB-6I-d59" id="Xug-FN-Mav"/>
+                <outlet property="activityIndicatorView" destination="N1t-j9-PF4" id="DZz-Jd-IAJ"/>
+                <outlet property="adImageView" destination="tIB-6I-d59" id="rf8-LL-avz"/>
                 <outlet property="descriptionLabel" destination="lIF-Ii-egj" id="cmg-KB-d09"/>
+                <outlet property="favouriteButton" destination="iG9-xJ-UZc" id="3FU-Go-m8m"/>
                 <outlet property="locationLabel" destination="Dd2-PQ-ELv" id="KWa-U1-HpQ"/>
-                <outlet property="priceBackgroundView" destination="l4M-Bo-2fO" id="EuN-Go-IAJ"/>
+                <outlet property="priceBackgroundView" destination="l4M-Bo-2fO" id="RcC-Vr-c7M"/>
                 <outlet property="priceLabel" destination="OfC-Bp-vAy" id="qiC-bn-SbB"/>
             </connections>
             <point key="canvasLocation" x="98.5" y="149"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="HeartDeselected" width="26" height="22"/>
         <image name="profile" width="165" height="165"/>
     </resources>
 </document>

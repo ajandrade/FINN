@@ -1,5 +1,5 @@
 //
-//  CustomSwitch.swift
+//  GraySwitch.swift
 //  FINN
 //
 //  Created by Amadeu Andrade on 04/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomSwitch: UISwitch {
+class GraySwitch: UISwitch {
   
   // MARK: - PRIVATE PROPERTIES
   

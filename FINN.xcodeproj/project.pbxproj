@@ -20,7 +20,7 @@
 		E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061E20274A23008B5FAB /* NetworkProvider.swift */; };
 		E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062020274A38008B5FAB /* DependencyContainer.swift */; };
 		E094062720274CDF008B5FAB /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = E094062620274CDF008B5FAB /* testData.json */; };
-		E094062A20275047008B5FAB /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062920275047008B5FAB /* CustomSwitch.swift */; };
+		E094062A20275047008B5FAB /* GraySwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062920275047008B5FAB /* GraySwitch.swift */; };
 		E094062F202754BE008B5FAB /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062D202754BE008B5FAB /* AdCell.swift */; };
 		E0940630202754BE008B5FAB /* AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E094062E202754BE008B5FAB /* AdCell.xib */; };
 		E0940632202754CA008B5FAB /* AdCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0940631202754CA008B5FAB /* AdCellPresenter.swift */; };
@@ -28,8 +28,9 @@
 		E094063620275A61008B5FAB /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094063520275A61008B5FAB /* Identifiable.swift */; };
 		E094063820275A90008B5FAB /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094063720275A90008B5FAB /* UICollectionViewCell.swift */; };
 		E094063A20275D40008B5FAB /* Roundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094063920275D40008B5FAB /* Roundable.swift */; };
-		E094064420276A61008B5FAB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064320276A61008B5FAB /* UIView.swift */; };
 		E094064620276B7A008B5FAB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064520276B7A008B5FAB /* UIColor.swift */; };
+		E0940648202795C4008B5FAB /* AdPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0940647202795C4008B5FAB /* AdPhotoImageView.swift */; };
+		E094064A20279685008B5FAB /* PriceSemiRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064920279685008B5FAB /* PriceSemiRoundedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,7 @@
 		E094061E20274A23008B5FAB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		E094062020274A38008B5FAB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		E094062620274CDF008B5FAB /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
-		E094062920275047008B5FAB /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
+		E094062920275047008B5FAB /* GraySwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraySwitch.swift; sourceTree = "<group>"; };
 		E094062D202754BE008B5FAB /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
 		E094062E202754BE008B5FAB /* AdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdCell.xib; sourceTree = "<group>"; };
 		E0940631202754CA008B5FAB /* AdCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCellPresenter.swift; sourceTree = "<group>"; };
@@ -72,8 +73,9 @@
 		E094063520275A61008B5FAB /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		E094063720275A90008B5FAB /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		E094063920275D40008B5FAB /* Roundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roundable.swift; sourceTree = "<group>"; };
-		E094064320276A61008B5FAB /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E094064520276B7A008B5FAB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E0940647202795C4008B5FAB /* AdPhotoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPhotoImageView.swift; sourceTree = "<group>"; };
+		E094064920279685008B5FAB /* PriceSemiRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSemiRoundedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +197,6 @@
 			children = (
 				E094063320275A2F008B5FAB /* UICollectionView.swift */,
 				E094063720275A90008B5FAB /* UICollectionViewCell.swift */,
-				E094064320276A61008B5FAB /* UIView.swift */,
 				E094064520276B7A008B5FAB /* UIColor.swift */,
 			);
 			path = Extensions;
@@ -270,7 +271,9 @@
 		E09406282027502F008B5FAB /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
-				E094062920275047008B5FAB /* CustomSwitch.swift */,
+				E094062920275047008B5FAB /* GraySwitch.swift */,
+				E0940647202795C4008B5FAB /* AdPhotoImageView.swift */,
+				E094064920279685008B5FAB /* PriceSemiRoundedView.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -518,14 +521,15 @@
 				E094063620275A61008B5FAB /* Identifiable.swift in Sources */,
 				E094063A20275D40008B5FAB /* Roundable.swift in Sources */,
 				E0940632202754CA008B5FAB /* AdCellPresenter.swift in Sources */,
-				E094062A20275047008B5FAB /* CustomSwitch.swift in Sources */,
+				E094062A20275047008B5FAB /* GraySwitch.swift in Sources */,
+				E0940648202795C4008B5FAB /* AdPhotoImageView.swift in Sources */,
 				E094064620276B7A008B5FAB /* UIColor.swift in Sources */,
 				E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */,
 				E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */,
 				E094063820275A90008B5FAB /* UICollectionViewCell.swift in Sources */,
+				E094064A20279685008B5FAB /* PriceSemiRoundedView.swift in Sources */,
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
 				E094061B202749FD008B5FAB /* DatabaseProvider.swift in Sources */,
-				E094064420276A61008B5FAB /* UIView.swift in Sources */,
 				E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */,
 				E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */,
 				E094063420275A2F008B5FAB /* UICollectionView.swift in Sources */,
