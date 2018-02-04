@@ -80,7 +80,7 @@
                 <constraint firstItem="VEX-Db-Z3o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="RF5-q4-0Yj"/>
                 <constraint firstItem="iuh-gB-9kx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xse-vr-l6C"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VEX-Db-Z3o" secondAttribute="trailing" constant="5" id="bdA-pM-GzY"/>
-                <constraint firstItem="iuh-gB-9kx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ur6-OC-p9i"/>
+                <constraint firstItem="iuh-gB-9kx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-20" id="ur6-OC-p9i"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VEX-Db-Z3o" secondAttribute="bottom" id="xH7-Rr-kbb"/>
                 <constraint firstItem="Bun-kS-Ox3" firstAttribute="top" secondItem="iuh-gB-9kx" secondAttribute="bottom" id="zmM-l7-JVB"/>
             </constraints>

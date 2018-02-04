@@ -31,6 +31,9 @@
 		E094064620276B7A008B5FAB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064520276B7A008B5FAB /* UIColor.swift */; };
 		E0940648202795C4008B5FAB /* AdPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0940647202795C4008B5FAB /* AdPhotoImageView.swift */; };
 		E094064A20279685008B5FAB /* PriceSemiRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064920279685008B5FAB /* PriceSemiRoundedView.swift */; };
+		E094064C20279D9E008B5FAB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064B20279D9E008B5FAB /* HTTPMethod.swift */; };
+		E094064E20279DC4008B5FAB /* FINNAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064D20279DC4008B5FAB /* FINNAPI.swift */; };
+		E094065020279DD8008B5FAB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064F20279DD8008B5FAB /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,9 @@
 		E094064520276B7A008B5FAB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E0940647202795C4008B5FAB /* AdPhotoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPhotoImageView.swift; sourceTree = "<group>"; };
 		E094064920279685008B5FAB /* PriceSemiRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSemiRoundedView.swift; sourceTree = "<group>"; };
+		E094064B20279D9E008B5FAB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E094064D20279DC4008B5FAB /* FINNAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNAPI.swift; sourceTree = "<group>"; };
+		E094064F20279DD8008B5FAB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 				E094061A202749FD008B5FAB /* DatabaseProvider.swift */,
 				E094061C20274A12008B5FAB /* ImageProvider.swift */,
 				E094061E20274A23008B5FAB /* NetworkProvider.swift */,
+				E094064D20279DC4008B5FAB /* FINNAPI.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 			children = (
 				E094063520275A61008B5FAB /* Identifiable.swift */,
 				E094063920275D40008B5FAB /* Roundable.swift */,
+				E094064F20279DD8008B5FAB /* API.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 		E094060F202747A2008B5FAB /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				E094064B20279D9E008B5FAB /* HTTPMethod.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -531,7 +540,10 @@
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
 				E094061B202749FD008B5FAB /* DatabaseProvider.swift in Sources */,
 				E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */,
+				E094065020279DD8008B5FAB /* API.swift in Sources */,
+				E094064C20279D9E008B5FAB /* HTTPMethod.swift in Sources */,
 				E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */,
+				E094064E20279DC4008B5FAB /* FINNAPI.swift in Sources */,
 				E094063420275A2F008B5FAB /* UICollectionView.swift in Sources */,
 				E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */,
 			);
