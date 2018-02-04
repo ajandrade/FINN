@@ -41,8 +41,10 @@ extension FINNImageAPI: API {
     }
   }
   
-  func asURLRequest() -> URLRequest {
-    guard var url = URL(string: FINNImageAPI.baseURLString) else { fatalError("URL is not valid.") }
+  func asURLRequest() throws -> URLRequest {
+    guard var url = URL(string: FINNImageAPI.baseURLString) else {
+      throw NetworkError.wrongUrl(FINNImageAPI.baseURLString)
+    }
     url = url.appendingPathComponent(self.path)
     var request = URLRequest(url: url)
     request.httpMethod = method

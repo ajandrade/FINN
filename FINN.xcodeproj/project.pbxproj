@@ -11,6 +11,8 @@
 		46A1BB6B2193CC51EA3BA665 /* Pods_FINNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725074B9036A79E8FE78DDC1 /* Pods_FINNTests.framework */; };
 		E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8B52027434600152D02 /* AppDelegate.swift */; };
 		E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8BC2027434600152D02 /* Assets.xcassets */; };
+		E033115D2027ABB300903318 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115C2027ABB300903318 /* Result.swift */; };
+		E033115F2027ABBE00903318 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115E2027ABBE00903318 /* NetworkError.swift */; };
 		E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0940611202747EB008B5FAB /* Launch Screen.storyboard */; };
 		E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406142027486A008B5FAB /* AdsListViewController.swift */; };
 		E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09406152027486A008B5FAB /* AdsListViewController.xib */; };
@@ -36,6 +38,8 @@
 		E094065020279DD8008B5FAB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064F20279DD8008B5FAB /* API.swift */; };
 		E09406572027A4B4008B5FAB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406562027A4B4008B5FAB /* Configuration.swift */; };
 		E09406592027A7F8008B5FAB /* FINNImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406582027A7F8008B5FAB /* FINNImageAPI.swift */; };
+		E094065D2027AA6B008B5FAB /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094065C2027AA6B008B5FAB /* URLSessionProtocol.swift */; };
+		E094065F2027AA8F008B5FAB /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094065E2027AA8F008B5FAB /* URLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,8 @@
 		E01FD8C12027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E01FD8C62027434600152D02 /* FINNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FINNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01FD8CC2027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E033115C2027ABB300903318 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E033115E2027ABBE00903318 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E0940611202747EB008B5FAB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E09406142027486A008B5FAB /* AdsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListViewController.swift; sourceTree = "<group>"; };
 		E09406152027486A008B5FAB /* AdsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdsListViewController.xib; sourceTree = "<group>"; };
@@ -91,6 +97,8 @@
 		E094065520279F24008B5FAB /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
 		E09406562027A4B4008B5FAB /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		E09406582027A7F8008B5FAB /* FINNImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNImageAPI.swift; sourceTree = "<group>"; };
+		E094065C2027AA6B008B5FAB /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		E094065E2027AA8F008B5FAB /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +221,7 @@
 				E094063320275A2F008B5FAB /* UICollectionView.swift */,
 				E094063720275A90008B5FAB /* UICollectionViewCell.swift */,
 				E094064520276B7A008B5FAB /* UIColor.swift */,
+				E094065E2027AA8F008B5FAB /* URLSession.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,6 +232,7 @@
 				E094063520275A61008B5FAB /* Identifiable.swift */,
 				E094063920275D40008B5FAB /* Roundable.swift */,
 				E094064F20279DD8008B5FAB /* API.swift */,
+				E094065C2027AA6B008B5FAB /* URLSessionProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -244,6 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				E094064B20279D9E008B5FAB /* HTTPMethod.swift */,
+				E033115C2027ABB300903318 /* Result.swift */,
+				E033115E2027ABBE00903318 /* NetworkError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -560,9 +572,11 @@
 			files = (
 				E094062F202754BE008B5FAB /* AdCell.swift in Sources */,
 				E094063620275A61008B5FAB /* Identifiable.swift in Sources */,
+				E094065F2027AA8F008B5FAB /* URLSession.swift in Sources */,
 				E094063A20275D40008B5FAB /* Roundable.swift in Sources */,
 				E0940632202754CA008B5FAB /* AdCellPresenter.swift in Sources */,
 				E094062A20275047008B5FAB /* GraySwitch.swift in Sources */,
+				E033115D2027ABB300903318 /* Result.swift in Sources */,
 				E0940648202795C4008B5FAB /* AdPhotoImageView.swift in Sources */,
 				E094064620276B7A008B5FAB /* UIColor.swift in Sources */,
 				E09406592027A7F8008B5FAB /* FINNImageAPI.swift in Sources */,
@@ -576,8 +590,10 @@
 				E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */,
 				E094065020279DD8008B5FAB /* API.swift in Sources */,
 				E094064C20279D9E008B5FAB /* HTTPMethod.swift in Sources */,
+				E094065D2027AA6B008B5FAB /* URLSessionProtocol.swift in Sources */,
 				E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */,
 				E094064E20279DC4008B5FAB /* FINNAdsAPI.swift in Sources */,
+				E033115F2027ABBE00903318 /* NetworkError.swift in Sources */,
 				E094063420275A2F008B5FAB /* UICollectionView.swift in Sources */,
 				E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */,
 			);

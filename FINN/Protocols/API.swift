@@ -13,5 +13,5 @@ protocol API {
   var method: String { get }
   var path: String { get }
   var parameters: [String: Any]? { get }
-  func asURLRequest() -> URLRequest
+  func asURLRequest() throws -> URLRequest
 }
