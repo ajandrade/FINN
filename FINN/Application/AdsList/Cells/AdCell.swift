@@ -10,10 +10,20 @@ import UIKit
 
 class AdCell: UICollectionViewCell {
   
+  // MARK: - IBOUTLETS
+  
+  @IBOutlet weak var priceBackgroundView: UIView!
+  @IBOutlet weak var adImageView: UIImageView!
+  @IBOutlet weak var priceLabel: UILabel!
+  @IBOutlet weak var locationLabel: UILabel!
+  @IBOutlet weak var descriptionLabel: UILabel!
+  
   // MARK: - INITIALIZATION
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    priceBackgroundView.round(corners: [.bottomLeft, .topRight], withRadius: 10)
+    adImageView.round(withRadius: 10)
   }
   
   // MARK: - CONFIGURATION

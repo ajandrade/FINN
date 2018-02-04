@@ -28,11 +28,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuh-gB-9kx">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                     <subviews>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iwJ-yP-fEb" customClass="FINNSwitch" customModule="FINN" customModuleProvider="target">
-                            <rect key="frame" x="313" y="32.5" width="51" height="31"/>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iwJ-yP-fEb" customClass="CustomSwitch" customModule="FINN" customModuleProvider="target">
+                            <rect key="frame" x="313" y="32" width="51" height="31"/>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kun favoritter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRT-A7-7Qf">
-                            <rect key="frame" x="13" y="35" width="290" height="25"/>
+                            <rect key="frame" x="13" y="33" width="290" height="25"/>
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -43,13 +43,13 @@
                         <constraint firstItem="iwJ-yP-fEb" firstAttribute="leading" secondItem="RRT-A7-7Qf" secondAttribute="trailing" constant="10" id="KUi-oT-MLX"/>
                         <constraint firstAttribute="height" constant="68" id="W3Z-0Y-IRc"/>
                         <constraint firstAttribute="trailing" secondItem="iwJ-yP-fEb" secondAttribute="trailing" constant="13" id="Wc0-5V-v53"/>
-                        <constraint firstAttribute="bottom" secondItem="RRT-A7-7Qf" secondAttribute="bottom" constant="8" id="hes-Ak-uf6"/>
+                        <constraint firstAttribute="bottom" secondItem="RRT-A7-7Qf" secondAttribute="bottom" constant="10" id="hes-Ak-uf6"/>
                         <constraint firstItem="RRT-A7-7Qf" firstAttribute="leading" secondItem="iuh-gB-9kx" secondAttribute="leading" constant="13" id="kd6-Qb-oka"/>
-                        <constraint firstItem="iwJ-yP-fEb" firstAttribute="centerY" secondItem="RRT-A7-7Qf" secondAttribute="centerY" id="pIp-FM-iQE"/>
+                        <constraint firstItem="iwJ-yP-fEb" firstAttribute="centerY" secondItem="RRT-A7-7Qf" secondAttribute="centerY" constant="2" id="pIp-FM-iQE"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-Db-Z3o">
-                    <rect key="frame" x="0.0" y="68" width="375" height="599"/>
+                    <rect key="frame" x="5" y="74" width="365" height="593"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Wv-7S-kJG">
                         <size key="itemSize" width="50" height="50"/>
@@ -63,16 +63,26 @@
                         <outlet property="prefetchDataSource" destination="-1" id="wkP-XC-fmj"/>
                     </connections>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bun-kS-Ox3">
+                    <rect key="frame" x="0.0" y="68" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ZVU-jJ-2UE"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bun-kS-Ox3" secondAttribute="trailing" id="4lO-fX-fgF"/>
+                <constraint firstItem="VEX-Db-Z3o" firstAttribute="top" secondItem="Bun-kS-Ox3" secondAttribute="bottom" constant="5" id="7jW-RA-nSe"/>
+                <constraint firstItem="Bun-kS-Ox3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CHc-xN-omu"/>
                 <constraint firstItem="iuh-gB-9kx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="L2A-WV-RLZ"/>
-                <constraint firstItem="VEX-Db-Z3o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RF5-q4-0Yj"/>
+                <constraint firstItem="VEX-Db-Z3o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="RF5-q4-0Yj"/>
                 <constraint firstItem="iuh-gB-9kx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xse-vr-l6C"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VEX-Db-Z3o" secondAttribute="trailing" id="bdA-pM-GzY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VEX-Db-Z3o" secondAttribute="trailing" constant="5" id="bdA-pM-GzY"/>
                 <constraint firstItem="iuh-gB-9kx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ur6-OC-p9i"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VEX-Db-Z3o" secondAttribute="bottom" id="xH7-Rr-kbb"/>
-                <constraint firstItem="VEX-Db-Z3o" firstAttribute="top" secondItem="iuh-gB-9kx" secondAttribute="bottom" id="zAZ-jf-xn5"/>
+                <constraint firstItem="Bun-kS-Ox3" firstAttribute="top" secondItem="iuh-gB-9kx" secondAttribute="bottom" id="zmM-l7-JVB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>

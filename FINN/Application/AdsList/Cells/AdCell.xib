@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
             <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -27,21 +28,21 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGW-IW-jGV">
                         <rect key="frame" x="0.0" y="0.0" width="179" height="240"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-6I-d59">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-6I-d59">
                                 <rect key="frame" x="0.0" y="0.0" width="179" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="yNe-lu-lac"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd2-PQ-ELv">
-                                <rect key="frame" x="4" y="193" width="171" height="18"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
+                                <rect key="frame" x="1" y="193" width="174" height="19.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIF-Ii-egj">
-                                <rect key="frame" x="4" y="215" width="171" height="18"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
+                                <rect key="frame" x="1" y="215.5" width="174" height="19.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -53,7 +54,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfC-Bp-vAy">
-                                <rect key="frame" x="5" y="155" width="38.5" height="23.5"/>
+                                <rect key="frame" x="7" y="155" width="38.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -63,13 +64,13 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tIB-6I-d59" secondAttribute="trailing" id="56P-rr-fzR"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" id="AOf-no-uOF"/>
-                            <constraint firstItem="lIF-Ii-egj" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="4" id="BKY-Ve-xOM"/>
-                            <constraint firstItem="lIF-Ii-egj" firstAttribute="top" secondItem="Dd2-PQ-ELv" secondAttribute="bottom" constant="4" id="DEU-Ln-90R"/>
+                            <constraint firstItem="lIF-Ii-egj" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="1" id="BKY-Ve-xOM"/>
+                            <constraint firstItem="lIF-Ii-egj" firstAttribute="top" secondItem="Dd2-PQ-ELv" secondAttribute="bottom" constant="3" id="DEU-Ln-90R"/>
                             <constraint firstAttribute="trailing" secondItem="lIF-Ii-egj" secondAttribute="trailing" constant="4" id="DLL-X6-b9C"/>
-                            <constraint firstItem="OfC-Bp-vAy" firstAttribute="leading" secondItem="l4M-Bo-2fO" secondAttribute="leading" constant="5" id="G6r-Lo-Kmv"/>
-                            <constraint firstAttribute="bottom" secondItem="lIF-Ii-egj" secondAttribute="bottom" constant="7" id="J9s-vK-oiK"/>
+                            <constraint firstItem="OfC-Bp-vAy" firstAttribute="leading" secondItem="l4M-Bo-2fO" secondAttribute="leading" constant="7" id="G6r-Lo-Kmv"/>
+                            <constraint firstAttribute="bottom" secondItem="lIF-Ii-egj" secondAttribute="bottom" constant="5" id="J9s-vK-oiK"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="bottom" secondItem="tIB-6I-d59" secondAttribute="bottom" id="QPY-5u-ALN"/>
-                            <constraint firstItem="Dd2-PQ-ELv" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="4" id="dYN-8A-ioz"/>
+                            <constraint firstItem="Dd2-PQ-ELv" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="1" id="dYN-8A-ioz"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="width" secondItem="tIB-6I-d59" secondAttribute="width" multiplier="0.45" id="gBV-gE-fSA"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="centerY" secondItem="OfC-Bp-vAy" secondAttribute="centerY" id="hxG-qY-unZ"/>
                             <constraint firstAttribute="trailing" secondItem="Dd2-PQ-ELv" secondAttribute="trailing" constant="4" id="nF0-iR-Mvx"/>
@@ -88,7 +89,17 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="179" height="240"/>
+            <connections>
+                <outlet property="adImageView" destination="tIB-6I-d59" id="Xug-FN-Mav"/>
+                <outlet property="descriptionLabel" destination="lIF-Ii-egj" id="cmg-KB-d09"/>
+                <outlet property="locationLabel" destination="Dd2-PQ-ELv" id="KWa-U1-HpQ"/>
+                <outlet property="priceBackgroundView" destination="l4M-Bo-2fO" id="EuN-Go-IAJ"/>
+                <outlet property="priceLabel" destination="OfC-Bp-vAy" id="qiC-bn-SbB"/>
+            </connections>
             <point key="canvasLocation" x="98.5" y="149"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="profile" width="165" height="165"/>
+    </resources>
 </document>

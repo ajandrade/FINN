@@ -1,5 +1,5 @@
 //
-//  FINNSwitch.swift
+//  CustomSwitch.swift
 //  FINN
 //
 //  Created by Amadeu Andrade on 04/02/2018.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class FINNSwitch: UISwitch {
+class CustomSwitch: UISwitch {
   
   // MARK: - PRIVATE PROPERTIES
   
-  private var backgroundOffColor: UIColor = UIColor.groupTableViewBackground
+  private var backgroundOffColor: UIColor = UIColor(hex: "C2C2C2")
   private var customOnTintColor: UIColor = UIColor.darkGray
   
   // MARK: - INITIALIZATION

@@ -44,7 +44,9 @@ extension AdsListViewController: UICollectionViewDataSource {
 extension AdsListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 100, height: 100)
+    let width = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+    let height = width + 60
+    return CGSize(width: width, height: height)
   }
 }
 
