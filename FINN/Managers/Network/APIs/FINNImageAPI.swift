@@ -1,5 +1,5 @@
 //
-//  FINNAPI.swift
+//  FINNImageAPI.swift
 //  FINN
 //
 //  Created by Amadeu Andrade on 04/02/2018.
@@ -8,27 +8,29 @@
 
 import Foundation
 
-enum FINNAPI {
-  case adsList
+enum FINNImageAPI {
+  case image
 }
 
-extension FINNAPI: API {
+extension FINNImageAPI: API {
   
   static var baseURLString: String {
-    return ""
+    let scheme = Configuration.Network.FINNImageSchema.value
+    let path = Configuration.Network.FINNImageBasePath.value
+    return "\(scheme)://\(path)/"
   }
   
   var method: String {
     switch self {
-    case .adsList:
+    case .image:
       return HTTPMethod.get.rawValue
     }
   }
   
   var path: String {
     switch self {
-    case .adsList:
-      return ""
+    case .image:
+      return "dynamic/480x360c/"
     }
   }
   
@@ -40,7 +42,7 @@ extension FINNAPI: API {
   }
   
   func asURLRequest() -> URLRequest {
-    guard var url = URL(string: FINNAPI.baseURLString) else { fatalError("URL is not valid.") }
+    guard var url = URL(string: FINNImageAPI.baseURLString) else { fatalError("URL is not valid.") }
     url = url.appendingPathComponent(self.path)
     var request = URLRequest(url: url)
     request.httpMethod = method
