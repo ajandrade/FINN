@@ -29,10 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="179" height="240"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-6I-d59" customClass="AdPhotoImageView" customModule="FINN" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="179" height="185"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="185" id="yNe-lu-lac"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="179" height="180"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd2-PQ-ELv">
                                 <rect key="frame" x="1" y="193" width="174" height="19.5"/>
@@ -47,14 +44,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4M-Bo-2fO" customClass="PriceSemiRoundedView" customModule="FINN" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="148" width="80.5" height="37"/>
+                                <rect key="frame" x="0.0" y="143" width="80.5" height="37"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="TWa-K6-QFw"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfC-Bp-vAy">
-                                <rect key="frame" x="7" y="155" width="38.5" height="23.5"/>
+                                <rect key="frame" x="7" y="150" width="38.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -90,6 +87,7 @@
                             <constraint firstAttribute="bottom" secondItem="lIF-Ii-egj" secondAttribute="bottom" constant="5" id="J9s-vK-oiK"/>
                             <constraint firstAttribute="trailing" secondItem="N1t-j9-PF4" secondAttribute="trailing" constant="11" id="P0b-8S-l76"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="bottom" secondItem="tIB-6I-d59" secondAttribute="bottom" id="QPY-5u-ALN"/>
+                            <constraint firstItem="tIB-6I-d59" firstAttribute="height" secondItem="EGW-IW-jGV" secondAttribute="height" multiplier="0.75" id="YVT-Uh-0GU"/>
                             <constraint firstAttribute="trailing" secondItem="iG9-xJ-UZc" secondAttribute="trailing" constant="10" id="bHC-5I-riq"/>
                             <constraint firstItem="Dd2-PQ-ELv" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="1" id="dYN-8A-ioz"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="width" secondItem="tIB-6I-d59" secondAttribute="width" multiplier="0.45" id="gBV-gE-fSA"/>
