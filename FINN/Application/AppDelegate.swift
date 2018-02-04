@@ -10,9 +10,9 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  
   var window: UIWindow?
-
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     setRootWindow()
     return true
@@ -20,12 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   private func setRootWindow() {
     window = UIWindow(frame: UIScreen.main.bounds)
+    let dependencies = buildDependencies()
     let adsListViewController = AdsListViewController()
-    let adsListPresenter = AdsListPresenter()
+    let adsListPresenter = AdsListPresenter(dependencies: dependencies)
     adsListViewController.presenter = adsListPresenter
     window?.rootViewController = adsListViewController
     window?.makeKeyAndVisible()
   }
-
+  
+  private func buildDependencies() -> DependencyContainer {
+    let network = NetworkProvider()
+    let image = ImageProvider()
+    let database = DatabaseProvider()
+    let dependencyContainer = DependencyContainer(network: network, image: image, database: database)
+    return dependencyContainer
+  }
+  
 }
-

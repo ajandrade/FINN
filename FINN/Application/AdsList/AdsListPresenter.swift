@@ -10,5 +10,17 @@ import Foundation
 
 protocol AdsListPresenterRepresentable { }
 
-class AdsListPresenter: AdsListPresenterRepresentable { }
-
+class AdsListPresenter: AdsListPresenterRepresentable {
+  
+  // MARK: - DEPENDENCIES
+  
+  typealias Dependencies = HasNetworkProvider & HasImageProvider & HasDatabaseProvider
+  private let dependencies: Dependencies
+  
+  // MARK: - INITIALIZER
+  
+  init(dependencies: DependencyContainer) {
+    self.dependencies = dependencies
+  }
+  
+}

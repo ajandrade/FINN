@@ -16,6 +16,10 @@
 		E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406142027486A008B5FAB /* AdsListViewController.swift */; };
 		E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09406152027486A008B5FAB /* AdsListViewController.xib */; };
 		E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0940618202748A4008B5FAB /* AdsListPresenter.swift */; };
+		E094061B202749FD008B5FAB /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061A202749FD008B5FAB /* DatabaseProvider.swift */; };
+		E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061C20274A12008B5FAB /* ImageProvider.swift */; };
+		E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061E20274A23008B5FAB /* NetworkProvider.swift */; };
+		E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062020274A38008B5FAB /* DependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		E09406142027486A008B5FAB /* AdsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListViewController.swift; sourceTree = "<group>"; };
 		E09406152027486A008B5FAB /* AdsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdsListViewController.xib; sourceTree = "<group>"; };
 		E0940618202748A4008B5FAB /* AdsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListPresenter.swift; sourceTree = "<group>"; };
+		E094061A202749FD008B5FAB /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
+		E094061C20274A12008B5FAB /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		E094061E20274A23008B5FAB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		E094062020274A38008B5FAB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,7 @@
 		E094060A20274778008B5FAB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E094062020274A38008B5FAB /* DependencyContainer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +161,9 @@
 		E094060B2027477D008B5FAB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E094061A202749FD008B5FAB /* DatabaseProvider.swift */,
+				E094061C20274A12008B5FAB /* ImageProvider.swift */,
+				E094061E20274A23008B5FAB /* NetworkProvider.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -416,9 +428,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */,
+				E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */,
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
+				E094061B202749FD008B5FAB /* DatabaseProvider.swift in Sources */,
 				E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */,
 				E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */,
+				E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
