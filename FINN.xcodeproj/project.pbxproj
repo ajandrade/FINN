@@ -21,6 +21,9 @@
 		E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062020274A38008B5FAB /* DependencyContainer.swift */; };
 		E094062720274CDF008B5FAB /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = E094062620274CDF008B5FAB /* testData.json */; };
 		E094062A20275047008B5FAB /* FINNSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062920275047008B5FAB /* FINNSwitch.swift */; };
+		E094062F202754BE008B5FAB /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062D202754BE008B5FAB /* AdCell.swift */; };
+		E0940630202754BE008B5FAB /* AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E094062E202754BE008B5FAB /* AdCell.xib */; };
+		E0940632202754CA008B5FAB /* AdCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0940631202754CA008B5FAB /* AdCellPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		E094062020274A38008B5FAB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		E094062620274CDF008B5FAB /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
 		E094062920275047008B5FAB /* FINNSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNSwitch.swift; sourceTree = "<group>"; };
+		E094062D202754BE008B5FAB /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
+		E094062E202754BE008B5FAB /* AdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdCell.xib; sourceTree = "<group>"; };
+		E0940631202754CA008B5FAB /* AdCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCellPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,7 @@
 		E09406132027484D008B5FAB /* AdsList */ = {
 			isa = PBXGroup;
 			children = (
+				E094062C202754A3008B5FAB /* Cells */,
 				E09406142027486A008B5FAB /* AdsListViewController.swift */,
 				E09406152027486A008B5FAB /* AdsListViewController.xib */,
 				E0940618202748A4008B5FAB /* AdsListPresenter.swift */,
@@ -248,6 +255,16 @@
 				E094062920275047008B5FAB /* FINNSwitch.swift */,
 			);
 			path = "Custom UI";
+			sourceTree = "<group>";
+		};
+		E094062C202754A3008B5FAB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E094062D202754BE008B5FAB /* AdCell.swift */,
+				E094062E202754BE008B5FAB /* AdCell.xib */,
+				E0940631202754CA008B5FAB /* AdCellPresenter.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0940630202754BE008B5FAB /* AdCell.xib in Resources */,
 				E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */,
 				E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */,
 				E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */,
@@ -478,6 +496,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E094062F202754BE008B5FAB /* AdCell.swift in Sources */,
+				E0940632202754CA008B5FAB /* AdCellPresenter.swift in Sources */,
 				E094062A20275047008B5FAB /* FINNSwitch.swift in Sources */,
 				E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */,
 				E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */,
