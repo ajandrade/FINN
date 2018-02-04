@@ -16,7 +16,11 @@ class AdsListViewController: UIViewController {
   
   // MARK: - IBOUTLETS
   
-  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var collectionView: UICollectionView! {
+    didSet {
+      collectionView.register(AdCell.self)
+    }
+  }
   
   // MARK: - VIEW LIFE CYCLE
 
