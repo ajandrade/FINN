@@ -20,6 +20,7 @@
 		E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061E20274A23008B5FAB /* NetworkProvider.swift */; };
 		E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062020274A38008B5FAB /* DependencyContainer.swift */; };
 		E094062720274CDF008B5FAB /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = E094062620274CDF008B5FAB /* testData.json */; };
+		E094062A20275047008B5FAB /* FINNSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062920275047008B5FAB /* FINNSwitch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		E094061E20274A23008B5FAB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		E094062020274A38008B5FAB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		E094062620274CDF008B5FAB /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
+		E094062920275047008B5FAB /* FINNSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		E01FD8B42027434600152D02 /* FINN */ = {
 			isa = PBXGroup;
 			children = (
+				E09406282027502F008B5FAB /* Custom UI */,
 				E0940610202747B8008B5FAB /* Application */,
 				E094060F202747A2008B5FAB /* Enums */,
 				E094060E20274795008B5FAB /* Configurations */,
@@ -237,6 +240,14 @@
 			children = (
 			);
 			path = "Test Cases";
+			sourceTree = "<group>";
+		};
+		E09406282027502F008B5FAB /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				E094062920275047008B5FAB /* FINNSwitch.swift */,
+			);
+			path = "Custom UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E094062A20275047008B5FAB /* FINNSwitch.swift in Sources */,
 				E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */,
 				E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */,
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,

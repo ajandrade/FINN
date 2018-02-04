@@ -14,6 +14,10 @@ class AdsListViewController: UIViewController {
   
   var presenter: AdsListPresenterRepresentable!
   
+  // MARK: - IBOUTLETS
+  
+  @IBOutlet weak var collectionView: UICollectionView!
+  
   // MARK: - VIEW LIFE CYCLE
 
   override func viewDidLoad() {
