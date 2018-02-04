@@ -32,8 +32,10 @@
 		E0940648202795C4008B5FAB /* AdPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0940647202795C4008B5FAB /* AdPhotoImageView.swift */; };
 		E094064A20279685008B5FAB /* PriceSemiRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064920279685008B5FAB /* PriceSemiRoundedView.swift */; };
 		E094064C20279D9E008B5FAB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064B20279D9E008B5FAB /* HTTPMethod.swift */; };
-		E094064E20279DC4008B5FAB /* FINNAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064D20279DC4008B5FAB /* FINNAPI.swift */; };
+		E094064E20279DC4008B5FAB /* FINNAdsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064D20279DC4008B5FAB /* FINNAdsAPI.swift */; };
 		E094065020279DD8008B5FAB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094064F20279DD8008B5FAB /* API.swift */; };
+		E09406572027A4B4008B5FAB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406562027A4B4008B5FAB /* Configuration.swift */; };
+		E09406592027A7F8008B5FAB /* FINNImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406582027A7F8008B5FAB /* FINNImageAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +82,15 @@
 		E0940647202795C4008B5FAB /* AdPhotoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPhotoImageView.swift; sourceTree = "<group>"; };
 		E094064920279685008B5FAB /* PriceSemiRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSemiRoundedView.swift; sourceTree = "<group>"; };
 		E094064B20279D9E008B5FAB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		E094064D20279DC4008B5FAB /* FINNAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNAPI.swift; sourceTree = "<group>"; };
+		E094064D20279DC4008B5FAB /* FINNAdsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNAdsAPI.swift; sourceTree = "<group>"; };
 		E094064F20279DD8008B5FAB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E094065120279EB5008B5FAB /* base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = base.xcconfig; sourceTree = "<group>"; };
+		E094065220279F02008B5FAB /* debug.tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.tests.xcconfig; sourceTree = "<group>"; };
+		E094065320279F12008B5FAB /* release.tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.tests.xcconfig; sourceTree = "<group>"; };
+		E094065420279F1B008B5FAB /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		E094065520279F24008B5FAB /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		E09406562027A4B4008B5FAB /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		E09406582027A7F8008B5FAB /* FINNImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNImageAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,10 +200,9 @@
 		E094060B2027477D008B5FAB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E094065A2027A7FD008B5FAB /* Network */,
 				E094061A202749FD008B5FAB /* DatabaseProvider.swift */,
 				E094061C20274A12008B5FAB /* ImageProvider.swift */,
-				E094061E20274A23008B5FAB /* NetworkProvider.swift */,
-				E094064D20279DC4008B5FAB /* FINNAPI.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -222,6 +230,12 @@
 		E094060E20274795008B5FAB /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
+				E09406562027A4B4008B5FAB /* Configuration.swift */,
+				E094065120279EB5008B5FAB /* base.xcconfig */,
+				E094065220279F02008B5FAB /* debug.tests.xcconfig */,
+				E094065320279F12008B5FAB /* release.tests.xcconfig */,
+				E094065420279F1B008B5FAB /* debug.xcconfig */,
+				E094065520279F24008B5FAB /* release.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -295,6 +309,24 @@
 				E0940631202754CA008B5FAB /* AdCellPresenter.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E094065A2027A7FD008B5FAB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E094065B2027A802008B5FAB /* APIs */,
+				E094061E20274A23008B5FAB /* NetworkProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E094065B2027A802008B5FAB /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				E094064D20279DC4008B5FAB /* FINNAdsAPI.swift */,
+				E09406582027A7F8008B5FAB /* FINNImageAPI.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,8 +565,10 @@
 				E094062A20275047008B5FAB /* GraySwitch.swift in Sources */,
 				E0940648202795C4008B5FAB /* AdPhotoImageView.swift in Sources */,
 				E094064620276B7A008B5FAB /* UIColor.swift in Sources */,
+				E09406592027A7F8008B5FAB /* FINNImageAPI.swift in Sources */,
 				E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */,
 				E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */,
+				E09406572027A4B4008B5FAB /* Configuration.swift in Sources */,
 				E094063820275A90008B5FAB /* UICollectionViewCell.swift in Sources */,
 				E094064A20279685008B5FAB /* PriceSemiRoundedView.swift in Sources */,
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
@@ -543,7 +577,7 @@
 				E094065020279DD8008B5FAB /* API.swift in Sources */,
 				E094064C20279D9E008B5FAB /* HTTPMethod.swift in Sources */,
 				E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */,
-				E094064E20279DC4008B5FAB /* FINNAPI.swift in Sources */,
+				E094064E20279DC4008B5FAB /* FINNAdsAPI.swift in Sources */,
 				E094063420275A2F008B5FAB /* UICollectionView.swift in Sources */,
 				E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */,
 			);
@@ -676,7 +710,7 @@
 		};
 		E01FD8D02027434600152D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB1AC1642FE9FB4FAC6EAC02 /* Pods-FINN.debug.xcconfig */;
+			baseConfigurationReference = E094065420279F1B008B5FAB /* debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -693,7 +727,7 @@
 		};
 		E01FD8D12027434600152D02 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E98F338D030E60922FB3656 /* Pods-FINN.release.xcconfig */;
+			baseConfigurationReference = E094065520279F24008B5FAB /* release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -710,7 +744,7 @@
 		};
 		E01FD8D32027434600152D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2A77AAFD99ABFCF2DF9DE2E /* Pods-FINNTests.debug.xcconfig */;
+			baseConfigurationReference = E094065220279F02008B5FAB /* debug.tests.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -728,7 +762,7 @@
 		};
 		E01FD8D42027434600152D02 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 716145DE72AC6FEE3C342F2A /* Pods-FINNTests.release.xcconfig */;
+			baseConfigurationReference = E094065320279F12008B5FAB /* release.tests.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

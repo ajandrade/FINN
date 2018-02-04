@@ -1,0 +1,19 @@
+//
+//  debug.tests.xcconfig
+//  FINN
+//
+//  Created by Amadeu Andrade on 04/02/2018.
+//  Copyright © 2018 Amadeu Andrade. All rights reserved.
+//
+
+#include "base.xcconfig"
+#include "../../Pods/Target Support Files/Pods-FINNTests/Pods-FINNTests.debug.xcconfig"
+
+PRODUCT_NAME_VERSION = 1.0.0
+PRODUCT_BUNDLE_VERSION = 1
+
+FINN_API_SCHEME = https
+FINN_BASE_PATH = gist.githubusercontent.com
+
+FINN_IMAGE_SCHEME = https
+FINN_IMAGE_PATH = images.finncdn.no

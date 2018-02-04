@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(PRODUCT_NAME_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(PRODUCT_BUNDLE_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -37,5 +39,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>FINN_API_SCHEME</key>
+	<string>$(FINN_API_SCHEME)</string>
+	<key>FINN_BASE_PATH</key>
+	<string>$(FINN_BASE_PATH)</string>
+	<key>FINN_IMAGE_SCHEME</key>
+	<string>$(FINN_IMAGE_SCHEME)</string>
+	<key>FINN_IMAGE_PATH</key>
+	<string>$(FINN_IMAGE_PATH)</string>
 </dict>
 </plist>
