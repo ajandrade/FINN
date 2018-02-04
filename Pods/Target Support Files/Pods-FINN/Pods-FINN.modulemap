@@ -1,0 +1,6 @@
+framework module Pods_FINN {
+  umbrella header "Pods-FINN-umbrella.h"
+
+  export *
+  module * { export * }
+}

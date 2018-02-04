@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EEB09CE2DAB503FF5B17C5E /* Pods_FINN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B32E4C856A37E16CF0A716 /* Pods_FINN.framework */; };
+		46A1BB6B2193CC51EA3BA665 /* Pods_FINNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725074B9036A79E8FE78DDC1 /* Pods_FINNTests.framework */; };
 		E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8B52027434600152D02 /* AppDelegate.swift */; };
 		E01FD8B82027434600152D02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8B72027434600152D02 /* ViewController.swift */; };
 		E01FD8BB2027434600152D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8B92027434600152D02 /* Main.storyboard */; };
@@ -26,6 +28,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25B32E4C856A37E16CF0A716 /* Pods_FINN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FINN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E98F338D030E60922FB3656 /* Pods-FINN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINN.release.xcconfig"; path = "Pods/Target Support Files/Pods-FINN/Pods-FINN.release.xcconfig"; sourceTree = "<group>"; };
+		716145DE72AC6FEE3C342F2A /* Pods-FINNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINNTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FINNTests/Pods-FINNTests.release.xcconfig"; sourceTree = "<group>"; };
+		725074B9036A79E8FE78DDC1 /* Pods_FINNTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FINNTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1AC1642FE9FB4FAC6EAC02 /* Pods-FINN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FINN/Pods-FINN.debug.xcconfig"; sourceTree = "<group>"; };
+		D2A77AAFD99ABFCF2DF9DE2E /* Pods-FINNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINNTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FINNTests/Pods-FINNTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E01FD8B22027434600152D02 /* FINN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FINN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01FD8B52027434600152D02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E01FD8B72027434600152D02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EEB09CE2DAB503FF5B17C5E /* Pods_FINN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46A1BB6B2193CC51EA3BA665 /* Pods_FINNTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CECD94CAAFB19D2923F7874 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB1AC1642FE9FB4FAC6EAC02 /* Pods-FINN.debug.xcconfig */,
+				4E98F338D030E60922FB3656 /* Pods-FINN.release.xcconfig */,
+				D2A77AAFD99ABFCF2DF9DE2E /* Pods-FINNTests.debug.xcconfig */,
+				716145DE72AC6FEE3C342F2A /* Pods-FINNTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A8A32C29467385F36B8187A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25B32E4C856A37E16CF0A716 /* Pods_FINN.framework */,
+				725074B9036A79E8FE78DDC1 /* Pods_FINNTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E01FD8A92027434600152D02 = {
 			isa = PBXGroup;
 			children = (
 				E01FD8B42027434600152D02 /* FINN */,
 				E01FD8C92027434600152D02 /* FINNTests */,
 				E01FD8B32027434600152D02 /* Products */,
+				8CECD94CAAFB19D2923F7874 /* Pods */,
+				A8A32C29467385F36B8187A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E01FD8CF2027434600152D02 /* Build configuration list for PBXNativeTarget "FINN" */;
 			buildPhases = (
+				D17B5C2ECD3650A9E702C956 /* [CP] Check Pods Manifest.lock */,
 				E01FD8AE2027434600152D02 /* Sources */,
 				E01FD8AF2027434600152D02 /* Frameworks */,
 				E01FD8B02027434600152D02 /* Resources */,
+				D62B6E051D07748B53006587 /* [CP] Embed Pods Frameworks */,
+				A22895D889ABEF58DEC2A7FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E01FD8D22027434600152D02 /* Build configuration list for PBXNativeTarget "FINNTests" */;
 			buildPhases = (
+				D7EA3912D42AFB9FB41B74CC /* [CP] Check Pods Manifest.lock */,
 				E01FD8C22027434600152D02 /* Sources */,
 				E01FD8C32027434600152D02 /* Frameworks */,
 				E01FD8C42027434600152D02 /* Resources */,
+				095ECB5D3C31729892A3C7C5 /* [CP] Embed Pods Frameworks */,
+				58D94C837F0B5582FFE5C6B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +231,110 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		095ECB5D3C31729892A3C7C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FINNTests/Pods-FINNTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58D94C837F0B5582FFE5C6B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FINNTests/Pods-FINNTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A22895D889ABEF58DEC2A7FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FINN/Pods-FINN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D17B5C2ECD3650A9E702C956 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FINN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D62B6E051D07748B53006587 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FINN/Pods-FINN-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FINN/Pods-FINN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7EA3912D42AFB9FB41B74CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FINNTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E01FD8AE2027434600152D02 /* Sources */ = {
@@ -351,11 +493,13 @@
 		};
 		E01FD8D02027434600152D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB1AC1642FE9FB4FAC6EAC02 /* Pods-FINN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8WVW27EH5;
 				INFOPLIST_FILE = FINN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeuandrade.FINN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,11 +510,13 @@
 		};
 		E01FD8D12027434600152D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E98F338D030E60922FB3656 /* Pods-FINN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8WVW27EH5;
 				INFOPLIST_FILE = FINN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeuandrade.FINN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +527,7 @@
 		};
 		E01FD8D32027434600152D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2A77AAFD99ABFCF2DF9DE2E /* Pods-FINNTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -398,6 +545,7 @@
 		};
 		E01FD8D42027434600152D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 716145DE72AC6FEE3C342F2A /* Pods-FINNTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
