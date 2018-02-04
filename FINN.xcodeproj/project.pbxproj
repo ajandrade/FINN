@@ -13,6 +13,9 @@
 		E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8BC2027434600152D02 /* Assets.xcassets */; };
 		E01FD8CB2027434600152D02 /* FINNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8CA2027434600152D02 /* FINNTests.swift */; };
 		E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0940611202747EB008B5FAB /* Launch Screen.storyboard */; };
+		E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406142027486A008B5FAB /* AdsListViewController.swift */; };
+		E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09406152027486A008B5FAB /* AdsListViewController.xib */; };
+		E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0940618202748A4008B5FAB /* AdsListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		E01FD8CA2027434600152D02 /* FINNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNTests.swift; sourceTree = "<group>"; };
 		E01FD8CC2027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0940611202747EB008B5FAB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E09406142027486A008B5FAB /* AdsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListViewController.swift; sourceTree = "<group>"; };
+		E09406152027486A008B5FAB /* AdsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdsListViewController.xib; sourceTree = "<group>"; };
+		E0940618202748A4008B5FAB /* AdsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +188,19 @@
 			isa = PBXGroup;
 			children = (
 				E01FD8B52027434600152D02 /* AppDelegate.swift */,
+				E09406132027484D008B5FAB /* AdsList */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		E09406132027484D008B5FAB /* AdsList */ = {
+			isa = PBXGroup;
+			children = (
+				E09406142027486A008B5FAB /* AdsListViewController.swift */,
+				E09406152027486A008B5FAB /* AdsListViewController.xib */,
+				E0940618202748A4008B5FAB /* AdsListPresenter.swift */,
+			);
+			path = AdsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */,
 				E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */,
 				E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */,
 			);
@@ -399,6 +417,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
+				E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */,
+				E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
