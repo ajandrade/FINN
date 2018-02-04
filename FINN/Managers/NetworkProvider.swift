@@ -11,4 +11,3 @@ import Foundation
 protocol NetworkProviderRepresentable { }
 
 struct NetworkProvider: NetworkProviderRepresentable { }
-

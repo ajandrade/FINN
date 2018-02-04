@@ -3,6 +3,7 @@ target 'FINN' do
 
   # Pods for FINN
   pod 'RealmSwift', '~> 3.1'
+  pod 'SwiftLint', '~> 0.24'
 
   target 'FINNTests' do
     inherit! :search_paths

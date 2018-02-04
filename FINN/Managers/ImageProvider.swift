@@ -11,4 +11,3 @@ import Foundation
 protocol ImageProviderRepresentable { }
 
 struct ImageProvider: ImageProviderRepresentable { }
-

@@ -11,4 +11,3 @@ import Foundation
 protocol DatabaseProviderRepresentable { }
 
 struct DatabaseProvider: DatabaseProviderRepresentable { }
-

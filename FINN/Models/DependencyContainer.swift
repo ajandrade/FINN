@@ -27,4 +27,3 @@ struct DependencyContainer: AllDependencies {
   let image: ImageProviderRepresentable
   let database: DatabaseProviderRepresentable
 }
-
