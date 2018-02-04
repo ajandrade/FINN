@@ -11,7 +11,6 @@
 		46A1BB6B2193CC51EA3BA665 /* Pods_FINNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725074B9036A79E8FE78DDC1 /* Pods_FINNTests.framework */; };
 		E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8B52027434600152D02 /* AppDelegate.swift */; };
 		E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8BC2027434600152D02 /* Assets.xcassets */; };
-		E01FD8CB2027434600152D02 /* FINNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8CA2027434600152D02 /* FINNTests.swift */; };
 		E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0940611202747EB008B5FAB /* Launch Screen.storyboard */; };
 		E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406142027486A008B5FAB /* AdsListViewController.swift */; };
 		E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09406152027486A008B5FAB /* AdsListViewController.xib */; };
@@ -20,6 +19,7 @@
 		E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061C20274A12008B5FAB /* ImageProvider.swift */; };
 		E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061E20274A23008B5FAB /* NetworkProvider.swift */; };
 		E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062020274A38008B5FAB /* DependencyContainer.swift */; };
+		E094062720274CDF008B5FAB /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = E094062620274CDF008B5FAB /* testData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 		E01FD8BC2027434600152D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E01FD8C12027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E01FD8C62027434600152D02 /* FINNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FINNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E01FD8CA2027434600152D02 /* FINNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNTests.swift; sourceTree = "<group>"; };
 		E01FD8CC2027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0940611202747EB008B5FAB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E09406142027486A008B5FAB /* AdsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		E094061C20274A12008B5FAB /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		E094061E20274A23008B5FAB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		E094062020274A38008B5FAB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		E094062620274CDF008B5FAB /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +134,9 @@
 		E01FD8C92027434600152D02 /* FINNTests */ = {
 			isa = PBXGroup;
 			children = (
-				E01FD8CA2027434600152D02 /* FINNTests.swift */,
-				E01FD8CC2027434600152D02 /* Info.plist */,
+				E094062320274CAD008B5FAB /* Mocks */,
+				E094062520274CBB008B5FAB /* Test Cases */,
+				E094062420274CB4008B5FAB /* Supporting Files */,
 			);
 			path = FINNTests;
 			sourceTree = "<group>";
@@ -213,6 +214,29 @@
 				E0940618202748A4008B5FAB /* AdsListPresenter.swift */,
 			);
 			path = AdsList;
+			sourceTree = "<group>";
+		};
+		E094062320274CAD008B5FAB /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E094062420274CB4008B5FAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E094062620274CDF008B5FAB /* testData.json */,
+				E01FD8CC2027434600152D02 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E094062520274CBB008B5FAB /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Test Cases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E094062720274CDF008B5FAB /* testData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +481,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01FD8CB2027434600152D02 /* FINNTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +644,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8WVW27EH5;
-				INFOPLIST_FILE = FINNTests/Info.plist;
+				INFOPLIST_FILE = "FINNTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeuandrade.FINNTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -638,7 +662,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8WVW27EH5;
-				INFOPLIST_FILE = FINNTests/Info.plist;
+				INFOPLIST_FILE = "FINNTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeuandrade.FINNTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

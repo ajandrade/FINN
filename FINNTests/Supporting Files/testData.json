@@ -1,0 +1,169 @@
+{
+  "size": 5957,
+  "items": [
+    {
+      "image": {
+        "scalable": true,
+        "width": 1600,
+        "type": "GENERAL",
+        "url": "2017/9/vertical-5/30/5/105/424/_1263219766.jpg",
+        "height": 1083
+      },
+      "score": "0.9535993933677673",
+      "ad-type": "BAP",
+      "price": {
+        "value": 300
+      },
+      "description": "Legemidler og bruken av dem",
+      "location": "Laksevåg",
+      "id": "105424045",
+      "type": "AD",
+      "tracking": {
+        "adobe": {
+          "event_name": "meta_recommendation",
+          "type": "stream",
+          "category": "relevant_ad",
+          "url": "https://apps.finn.no/api/stream/discover/"
+        },
+        "ec": {
+          "inScreen": [
+            "https://www.finn.no/ec/USER/recommendationEvents?adIds=105424045&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.inScreen"
+          ],
+          "click": [
+            "https://www.finn.no/ec/AD/NoOfPageViews_Main?finnkode=105424045",
+            "https://www.finn.no/ec/USER/recommendationEvents?finnkode=105424045&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.click"
+          ]
+        }
+      },
+      "actions": {
+        "block": [
+          "https://www.finn.no/ec/USER/recommend.block?finnkode=105424045&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover"
+        ]
+      },
+      "version": "finn_meta_discovery_2b.finn_bap_mlt.moreLikeThis"
+    },
+    {
+      "image": {
+        "scalable": true,
+        "type": "GENERAL",
+        "url": "2017/7/vertical-2/19/3/100/464/_1229205040.jpg"
+      },
+      "score": "0.7926514744758606",
+      "ad-type": "REALESTATE",
+      "price": {
+        "value": 11900
+      },
+      "description": "RODELØKKA: Trivelig 2-roms med balkong. Inkl: hvitevarer, internett, kabel-tv og trappevask. Mulighet for leie av garasjeplass. Velkommen til visning søndag 1. oktober kl. 14:00!",
+      "location": "Oslo",
+      "id": "100464613",
+      "type": "AD",
+      "tracking": {
+        "adobe": {
+          "event_name": "meta_recommendation",
+          "type": "stream",
+          "category": "relevant_ad",
+          "url": "https://apps.finn.no/api/stream/discover/"
+        },
+        "ec": {
+          "inScreen": [
+            "https://www.finn.no/ec/USER/recommendationEvents?adIds=100464613&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.inScreen"
+          ],
+          "click": [
+            "https://www.finn.no/ec/AD/NoOfPageViews_Main?finnkode=100464613",
+            "https://www.finn.no/ec/USER/recommendationEvents?finnkode=100464613&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.click"
+          ]
+        }
+      },
+      "actions": {
+        "block": [
+          "https://www.finn.no/ec/USER/recommend.block?finnkode=100464613&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover"
+        ]
+      },
+      "version": "finn_meta_discovery_2b.finn_real_estate_als_r150.recommendItems"
+    },
+    {
+      "image": {
+        "scalable": true,
+        "width": 900,
+        "type": "GENERAL",
+        "url": "2017/7/vertical-2/26/0/100/831/_1214140960.jpg",
+        "height": 1600
+      },
+      "score": "0.7853051424026489",
+      "ad-type": "REALESTATE",
+      "price": {
+        "value": 11500
+      },
+      "description": "Nyoppusset og sentral leilighet til leie.",
+      "location": "Oslo",
+      "id": "100831300",
+      "type": "AD",
+      "tracking": {
+        "adobe": {
+          "event_name": "meta_recommendation",
+          "type": "stream",
+          "category": "relevant_ad",
+          "url": "https://apps.finn.no/api/stream/discover/"
+        },
+        "ec": {
+          "inScreen": [
+            "https://www.finn.no/ec/USER/recommendationEvents?adIds=100831300&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.inScreen"
+          ],
+          "click": [
+            "https://www.finn.no/ec/AD/NoOfPageViews_Main?finnkode=100831300",
+            "https://www.finn.no/ec/USER/recommendationEvents?finnkode=100831300&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.click"
+          ]
+        }
+      },
+      "actions": {
+        "block": [
+          "https://www.finn.no/ec/USER/recommend.block?finnkode=100831300&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover"
+        ]
+      },
+      "version": "finn_meta_discovery_2b.finn_real_estate_als_r150.recommendItems"
+    },
+    {
+      "image": {
+        "scalable": true,
+        "width": 1600,
+        "type": "GENERAL",
+        "url": "2017/3/vertical-2/22/6/929/980/26_1743975582.jpg",
+        "height": 1067
+      },
+      "score": "0.7722058892250061",
+      "ad-type": "REALESTATE",
+      "price": {
+        "value": 14900
+      },
+      "description": "3 ROMS BRENNA, OSLO -- Ny renovert leilighet",
+      "location": "Oslo",
+      "id": "92998026",
+      "type": "AD",
+      "tracking": {
+        "adobe": {
+          "event_name": "meta_recommendation",
+          "type": "stream",
+          "category": "relevant_ad",
+          "url": "https://apps.finn.no/api/stream/discover/"
+        },
+        "ec": {
+          "inScreen": [
+            "https://www.finn.no/ec/USER/recommendationEvents?adIds=92998026&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.inScreen"
+          ],
+          "click": [
+            "https://www.finn.no/ec/AD/NoOfPageViews_Main?finnkode=92998026",
+            "https://www.finn.no/ec/USER/recommendationEvents?finnkode=92998026&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.click"
+          ]
+        }
+      },
+      "actions": {
+        "block": [
+          "https://www.finn.no/ec/USER/recommend.block?finnkode=92998026&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover"
+        ]
+      },
+      "version": "finn_meta_discovery_2b.finn_real_estate_als_r150.recommendItems"
+    }
+  ],
+  "version": "finn_meta_discovery_2b",
+  "uuid": "80ec2f0c-44c9-435a-aeec-99e164304de9"
+}
