@@ -10,11 +10,9 @@
 		1EEB09CE2DAB503FF5B17C5E /* Pods_FINN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B32E4C856A37E16CF0A716 /* Pods_FINN.framework */; };
 		46A1BB6B2193CC51EA3BA665 /* Pods_FINNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725074B9036A79E8FE78DDC1 /* Pods_FINNTests.framework */; };
 		E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8B52027434600152D02 /* AppDelegate.swift */; };
-		E01FD8B82027434600152D02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8B72027434600152D02 /* ViewController.swift */; };
-		E01FD8BB2027434600152D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8B92027434600152D02 /* Main.storyboard */; };
 		E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8BC2027434600152D02 /* Assets.xcassets */; };
-		E01FD8C02027434600152D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8BE2027434600152D02 /* LaunchScreen.storyboard */; };
 		E01FD8CB2027434600152D02 /* FINNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8CA2027434600152D02 /* FINNTests.swift */; };
+		E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0940611202747EB008B5FAB /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +34,12 @@
 		D2A77AAFD99ABFCF2DF9DE2E /* Pods-FINNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINNTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FINNTests/Pods-FINNTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E01FD8B22027434600152D02 /* FINN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FINN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01FD8B52027434600152D02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E01FD8B72027434600152D02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E01FD8BA2027434600152D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E01FD8BC2027434600152D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E01FD8BF2027434600152D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E01FD8C12027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E01FD8C62027434600152D02 /* FINNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FINNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01FD8CA2027434600152D02 /* FINNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINNTests.swift; sourceTree = "<group>"; };
 		E01FD8CC2027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0940611202747EB008B5FAB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +105,14 @@
 		E01FD8B42027434600152D02 /* FINN */ = {
 			isa = PBXGroup;
 			children = (
-				E01FD8B52027434600152D02 /* AppDelegate.swift */,
-				E01FD8B72027434600152D02 /* ViewController.swift */,
-				E01FD8B92027434600152D02 /* Main.storyboard */,
-				E01FD8BC2027434600152D02 /* Assets.xcassets */,
-				E01FD8BE2027434600152D02 /* LaunchScreen.storyboard */,
-				E01FD8C12027434600152D02 /* Info.plist */,
+				E0940610202747B8008B5FAB /* Application */,
+				E094060F202747A2008B5FAB /* Enums */,
+				E094060E20274795008B5FAB /* Configurations */,
+				E094060D2027478B008B5FAB /* Protocols */,
+				E094060C20274787008B5FAB /* Extensions */,
+				E094060B2027477D008B5FAB /* Managers */,
+				E094060A20274778008B5FAB /* Models */,
+				E094060920274770008B5FAB /* Supporting Files */,
 			);
 			path = FINN;
 			sourceTree = "<group>";
@@ -126,6 +124,66 @@
 				E01FD8CC2027434600152D02 /* Info.plist */,
 			);
 			path = FINNTests;
+			sourceTree = "<group>";
+		};
+		E094060920274770008B5FAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E01FD8C12027434600152D02 /* Info.plist */,
+				E01FD8BC2027434600152D02 /* Assets.xcassets */,
+				E0940611202747EB008B5FAB /* Launch Screen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E094060A20274778008B5FAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E094060B2027477D008B5FAB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E094060C20274787008B5FAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E094060D2027478B008B5FAB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E094060E20274795008B5FAB /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		E094060F202747A2008B5FAB /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		E0940610202747B8008B5FAB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E01FD8B52027434600152D02 /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,9 +275,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01FD8C02027434600152D02 /* LaunchScreen.storyboard in Resources */,
+				E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */,
 				E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */,
-				E01FD8BB2027434600152D02 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01FD8B82027434600152D02 /* ViewController.swift in Sources */,
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,25 +419,6 @@
 			targetProxy = E01FD8C72027434600152D02 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E01FD8B92027434600152D02 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E01FD8BA2027434600152D02 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E01FD8BE2027434600152D02 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E01FD8BF2027434600152D02 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E01FD8CD2027434600152D02 /* Debug */ = {
@@ -498,7 +535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8WVW27EH5;
-				INFOPLIST_FILE = FINN/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FINN/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeuandrade.FINN;
@@ -515,7 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8WVW27EH5;
-				INFOPLIST_FILE = FINN/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FINN/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeuandrade.FINN;
