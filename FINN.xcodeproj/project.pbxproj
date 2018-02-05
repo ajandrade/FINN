@@ -13,6 +13,11 @@
 		E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8BC2027434600152D02 /* Assets.xcassets */; };
 		E033115D2027ABB300903318 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115C2027ABB300903318 /* Result.swift */; };
 		E033115F2027ABBE00903318 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115E2027ABBE00903318 /* NetworkError.swift */; };
+		E08A199A2028F3B500A4BF3E /* AdPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A19992028F3B500A4BF3E /* AdPrice.swift */; };
+		E08A199C2028F3E000A4BF3E /* AdPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A199B2028F3E000A4BF3E /* AdPhoto.swift */; };
+		E08A199E2028F47500A4BF3E /* AdsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A199D2028F47500A4BF3E /* AdsContainer.swift */; };
+		E08A19A02028F49000A4BF3E /* NormalAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A199F2028F49000A4BF3E /* NormalAd.swift */; };
+		E08A19A22028F4BD00A4BF3E /* FavouriteAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A19A12028F4BD00A4BF3E /* FavouriteAd.swift */; };
 		E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0940611202747EB008B5FAB /* Launch Screen.storyboard */; };
 		E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406142027486A008B5FAB /* AdsListViewController.swift */; };
 		E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09406152027486A008B5FAB /* AdsListViewController.xib */; };
@@ -67,6 +72,11 @@
 		E01FD8CC2027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E033115C2027ABB300903318 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E033115E2027ABBE00903318 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E08A19992028F3B500A4BF3E /* AdPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPrice.swift; sourceTree = "<group>"; };
+		E08A199B2028F3E000A4BF3E /* AdPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPhoto.swift; sourceTree = "<group>"; };
+		E08A199D2028F47500A4BF3E /* AdsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsContainer.swift; sourceTree = "<group>"; };
+		E08A199F2028F49000A4BF3E /* NormalAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalAd.swift; sourceTree = "<group>"; };
+		E08A19A12028F4BD00A4BF3E /* FavouriteAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAd.swift; sourceTree = "<group>"; };
 		E0940611202747EB008B5FAB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E09406142027486A008B5FAB /* AdsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListViewController.swift; sourceTree = "<group>"; };
 		E09406152027486A008B5FAB /* AdsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdsListViewController.xib; sourceTree = "<group>"; };
@@ -201,6 +211,11 @@
 			isa = PBXGroup;
 			children = (
 				E094062020274A38008B5FAB /* DependencyContainer.swift */,
+				E08A19992028F3B500A4BF3E /* AdPrice.swift */,
+				E08A199B2028F3E000A4BF3E /* AdPhoto.swift */,
+				E08A199D2028F47500A4BF3E /* AdsContainer.swift */,
+				E08A199F2028F49000A4BF3E /* NormalAd.swift */,
+				E08A19A12028F4BD00A4BF3E /* FavouriteAd.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -578,16 +593,21 @@
 				E094062A20275047008B5FAB /* GraySwitch.swift in Sources */,
 				E033115D2027ABB300903318 /* Result.swift in Sources */,
 				E0940648202795C4008B5FAB /* AdPhotoImageView.swift in Sources */,
+				E08A19A02028F49000A4BF3E /* NormalAd.swift in Sources */,
 				E094064620276B7A008B5FAB /* UIColor.swift in Sources */,
 				E09406592027A7F8008B5FAB /* FINNImageAPI.swift in Sources */,
 				E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */,
 				E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */,
 				E09406572027A4B4008B5FAB /* Configuration.swift in Sources */,
 				E094063820275A90008B5FAB /* UICollectionViewCell.swift in Sources */,
+				E08A199E2028F47500A4BF3E /* AdsContainer.swift in Sources */,
+				E08A199A2028F3B500A4BF3E /* AdPrice.swift in Sources */,
 				E094064A20279685008B5FAB /* PriceSemiRoundedView.swift in Sources */,
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
+				E08A19A22028F4BD00A4BF3E /* FavouriteAd.swift in Sources */,
 				E094061B202749FD008B5FAB /* DatabaseProvider.swift in Sources */,
 				E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */,
+				E08A199C2028F3E000A4BF3E /* AdPhoto.swift in Sources */,
 				E094065020279DD8008B5FAB /* API.swift in Sources */,
 				E094064C20279D9E008B5FAB /* HTTPMethod.swift in Sources */,
 				E094065D2027AA6B008B5FAB /* URLSessionProtocol.swift in Sources */,
