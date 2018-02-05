@@ -18,6 +18,7 @@
 		E08A199E2028F47500A4BF3E /* AdsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A199D2028F47500A4BF3E /* AdsContainer.swift */; };
 		E08A19A02028F49000A4BF3E /* NormalAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A199F2028F49000A4BF3E /* NormalAd.swift */; };
 		E08A19A22028F4BD00A4BF3E /* FavouriteAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A19A12028F4BD00A4BF3E /* FavouriteAd.swift */; };
+		E08A19A42029074200A4BF3E /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A19A32029074200A4BF3E /* UIButton.swift */; };
 		E0940612202747EB008B5FAB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0940611202747EB008B5FAB /* Launch Screen.storyboard */; };
 		E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09406142027486A008B5FAB /* AdsListViewController.swift */; };
 		E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09406152027486A008B5FAB /* AdsListViewController.xib */; };
@@ -77,6 +78,7 @@
 		E08A199D2028F47500A4BF3E /* AdsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsContainer.swift; sourceTree = "<group>"; };
 		E08A199F2028F49000A4BF3E /* NormalAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalAd.swift; sourceTree = "<group>"; };
 		E08A19A12028F4BD00A4BF3E /* FavouriteAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAd.swift; sourceTree = "<group>"; };
+		E08A19A32029074200A4BF3E /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		E0940611202747EB008B5FAB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E09406142027486A008B5FAB /* AdsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListViewController.swift; sourceTree = "<group>"; };
 		E09406152027486A008B5FAB /* AdsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdsListViewController.xib; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				E094063720275A90008B5FAB /* UICollectionViewCell.swift */,
 				E094064520276B7A008B5FAB /* UIColor.swift */,
 				E094065E2027AA8F008B5FAB /* URLSession.swift */,
+				E08A19A32029074200A4BF3E /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				E094065F2027AA8F008B5FAB /* URLSession.swift in Sources */,
 				E094063A20275D40008B5FAB /* Roundable.swift in Sources */,
 				E0940632202754CA008B5FAB /* AdCellPresenter.swift in Sources */,
+				E08A19A42029074200A4BF3E /* UIButton.swift in Sources */,
 				E094062A20275047008B5FAB /* GraySwitch.swift in Sources */,
 				E033115D2027ABB300903318 /* Result.swift in Sources */,
 				E0940648202795C4008B5FAB /* AdPhotoImageView.swift in Sources */,

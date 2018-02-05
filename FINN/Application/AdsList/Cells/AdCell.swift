@@ -28,7 +28,17 @@ class AdCell: UICollectionViewCell {
     
   // MARK: - CONFIGURATION
   
-  func configure(with presenter: AdCellPresenterRepresentable) { }
+  func configure(with presenter: AdCellPresenterRepresentable) {
+    //TODO: - Add image
+    priceLabel.text = presenter.price
+    locationLabel.text = presenter.location
+    descriptionLabel.text = presenter.adDescription
+    if presenter.isFavourite {
+      favouriteButton.setImageForAllStates(UIImage(named: "HeartSelected"))
+    } else {
+      favouriteButton.setImageForAllStates(UIImage(named: "HeartDeselected"))
+    }
+  }
   
   // MARK: - IBACTIONS
   

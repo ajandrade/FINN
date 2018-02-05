@@ -24,6 +24,19 @@ class AdsListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    presenter.getAllAds { [weak self] result in
+      guard let `self` = self else { return }
+      switch result {
+      case .success:
+        DispatchQueue.main.async {
+          self.collectionView.reloadData()
+        }
+        print("Ok")
+      case .failure(let err):
+        print(err.description)
+      }
+    }
   }
   
 }
@@ -31,11 +44,13 @@ class AdsListViewController: UIViewController {
 extension AdsListViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 30
+    return presenter.numberOfItems
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    guard let item = presenter.item(for: indexPath.row) else { return AdCell() }
     let cell = collectionView.dequeueCell(for: indexPath) as AdCell
+    cell.configure(with: item)
     cell.favouriteSelected = { [weak self] in
       print("Favourite!")
     }

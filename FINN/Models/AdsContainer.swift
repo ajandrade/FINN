@@ -9,5 +9,16 @@
 import Foundation
 
 struct AdsContainer: Decodable {
+  
+  // MARK: - PROPERTIES
+  
   let items: [NormalAd]
+  
+  // MARK: - FUNCTIONS
+  
+  static func decodeAds(from data: Data) -> [NormalAd] {
+    let ads = try? JSONDecoder().decode(self, from: data)
+    guard let allAds = ads?.items else { return [] }
+    return allAds
+  }
 }
