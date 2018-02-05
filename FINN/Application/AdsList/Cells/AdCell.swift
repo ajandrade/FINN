@@ -20,10 +20,13 @@ class AdCell: UICollectionViewCell {
   @IBOutlet weak var favouriteButton: UIButton!
   @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
   
+  // MARK: - PRIVATE PROPERTIES
+  
+  private let deselectedImage = UIImage(named: "HeartDeselected")
+  private let selectedImage = UIImage(named: "HeartSelected")
+
   // MARK: - PROPERTIES
-  
-  private var isFavourite: Bool = false
-  
+    
   var favouriteSelected: (() -> Void)?
     
   // MARK: - CONFIGURATION
@@ -34,9 +37,9 @@ class AdCell: UICollectionViewCell {
     locationLabel.text = presenter.location
     descriptionLabel.text = presenter.adDescription
     if presenter.isFavourite {
-      favouriteButton.setImageForAllStates(UIImage(named: "HeartSelected"))
+      favouriteButton.setImageForAllStates(selectedImage)
     } else {
-      favouriteButton.setImageForAllStates(UIImage(named: "HeartDeselected"))
+      favouriteButton.setImageForAllStates(deselectedImage)
     }
   }
   
