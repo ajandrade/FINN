@@ -20,7 +20,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   
   // MARK: - DEPENDENCIES
   
-  typealias Dependencies = HasNetworkProvider & HasImageProvider & HasDatabaseProvider
+  typealias Dependencies = HasNetworkProvider & HasImageProvider & HasDatabaseProvider & HasCacheProvider
   private let dependencies: Dependencies
   
   // MARK: - PRIVATE PROPERTIES

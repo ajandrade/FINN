@@ -31,8 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   private func buildDependencies() -> DependencyContainer {
     let network = NetworkProvider()
     let image = ImageProvider()
+    let cache = CacheProvider()
     let database = DatabaseProvider()
-    let dependencyContainer = DependencyContainer(network: network, image: image, database: database)
+    let dependencyContainer = DependencyContainer(network: network, image: image, database: database, cache: cache)
     return dependencyContainer
   }
   

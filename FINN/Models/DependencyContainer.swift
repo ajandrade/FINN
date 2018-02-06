@@ -22,8 +22,13 @@ protocol HasDatabaseProvider {
   var database: DatabaseProviderRepresentable { get }
 }
 
+protocol HasCacheProvider {
+  var cache: CacheProviderRepresentable { get }
+}
+
 struct DependencyContainer: AllDependencies {
   let network: NetworkProviderRepresentable
   let image: ImageProviderRepresentable
   let database: DatabaseProviderRepresentable
+  let cache: CacheProviderRepresentable
 }
