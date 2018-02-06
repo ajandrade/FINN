@@ -64,7 +64,9 @@ class AdCell: UICollectionViewCell {
         case .failure:
           self?.setNoImage()
         }
-        self?.downloadIndicatorView.stopAnimating()
+        DispatchQueue.main.async {
+          self?.downloadIndicatorView.stopAnimating()
+        }
       })
     } else {
       setNoImage()
@@ -72,8 +74,10 @@ class AdCell: UICollectionViewCell {
   }
   
   private func setNoImage() {
-    adImageView.image = nil
-    adImageView.backgroundColor = UIColor.lightGray
+    DispatchQueue.main.async {
+      self.adImageView.image = nil
+      self.adImageView.backgroundColor = UIColor.lightGray
+    }
   }
   
   // MARK: - IBACTIONS
