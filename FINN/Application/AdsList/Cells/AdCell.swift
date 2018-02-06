@@ -25,7 +25,8 @@ class AdCell: UICollectionViewCell {
   
   private let deselectedImage = UIImage(named: "HeartDeselected")
   private let selectedImage = UIImage(named: "HeartSelected")
-  
+  private var cellDownloadId: String = ""
+
   // MARK: - PROPERTIES
   
   var favouriteSelected: (() -> Void)?
@@ -41,31 +42,38 @@ class AdCell: UICollectionViewCell {
     } else {
       favouriteButton.setImageForAllStates(deselectedImage)
     }
+    cellDownloadId = presenter.photoUri ?? ""
 
-    /* TODOs:
-     - Add cache
-     - Add default image
-    */
-    if let uri = presenter.photoUri {
+    // Check cache to set image
+    if let cachedData = presenter.cachedData {
+      let image = UIImage(data: cachedData)
+      adImageView.image = image
+    } else if let uri = presenter.photoUri {
+      // Since there is no data hide image
+      setNoImage()
+      // Download image
       downloadIndicatorView.startAnimating()
       presenter.downloadImage(for: uri, { [weak self] result in
-        guard let `self` = self else { return }
-        DispatchQueue.main.async {
-          self.downloadIndicatorView.stopAnimating()
-        }
+        // Check if cell has been recycled to represent other data.
+        guard self?.cellDownloadId == presenter.photoUri else { return }
+        // Configure with fetched image
         switch result {
         case .success(let data):
           let image = UIImage(data: data)
-          DispatchQueue.main.async {
-            self.adImageView.image = image
-          }
+          self?.adImageView.image = image
         case .failure:
-          self.adImageView.image = nil
+          self?.setNoImage()
         }
+        self?.downloadIndicatorView.stopAnimating()
       })
     } else {
-      adImageView.image = nil
+      setNoImage()
     }
+  }
+  
+  private func setNoImage() {
+    adImageView.image = nil
+    adImageView.backgroundColor = UIColor.lightGray
   }
   
   // MARK: - IBACTIONS

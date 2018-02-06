@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias AllDependencies = HasNetworkProvider & HasImageProvider & HasDatabaseProvider
+typealias AllDependencies = HasNetworkProvider & HasImageProvider & HasDatabaseProvider & HasCacheProvider
 
 protocol HasNetworkProvider {
   var network: NetworkProviderRepresentable { get }

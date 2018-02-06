@@ -15,6 +15,8 @@ protocol AdCellPresenterRepresentable {
   var adDescription: String { get }
   var isFavourite: Bool { get }
   
+  var cachedData: Data? { get }
+  
   func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
@@ -22,9 +24,9 @@ struct AdCellPresenter: AdCellPresenterRepresentable {
   
   // MARK: - DEPENDENCIES
   
-  typealias Dependencies = HasNetworkProvider
+  typealias Dependencies = HasNetworkProvider & HasCacheProvider
   private let dependencies: Dependencies
-
+  
   // MARK: - PROPERTIES
   
   let photoUri: String?
@@ -32,6 +34,11 @@ struct AdCellPresenter: AdCellPresenterRepresentable {
   let location: String
   let adDescription: String
   let isFavourite: Bool
+  
+  var cachedData: Data? {
+    guard let uri = photoUri, let cachedData = dependencies.cache.getData(forkey: uri) else { return nil }
+    return cachedData
+  }
   
   // MARK: - INITIALIZER
   
@@ -48,10 +55,13 @@ struct AdCellPresenter: AdCellPresenterRepresentable {
     photoUri = normalAd.photoUri
   }
   
+  // MARK: - FUNCTIONS
+  
   func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void) {
     dependencies.network.downloadImage(for: uri) { result in
       switch result {
       case .success(let data):
+        self.dependencies.cache.add(data, for: uri)
         completion(.success(data))
       case .failure:
         completion(.failure(NetworkError.noImage))

@@ -14,6 +14,9 @@ protocol AdsListPresenterRepresentable {
   func item(for index: Int) -> AdCellPresenterRepresentable? 
   
   func getAllAds(_ completion: @escaping (Result<Void, NetworkError>) -> Void)
+  
+  func startPrefetching(for indexes: [Int])
+  func cancelPrefetching(for indexes: [Int])
 }
 
 class AdsListPresenter: AdsListPresenterRepresentable {
@@ -61,6 +64,32 @@ class AdsListPresenter: AdsListPresenterRepresentable {
         completion(.failure(err))
       }
     }
+  }
+  
+  // MARK: - PREFETCHING
+  
+  func startPrefetching(for indexes: [Int]) {
+    let uris = indexes.flatMap { item(for: $0)?.photoUri }
+    uris.forEach(downloadImage)
+  }
+  
+  func cancelPrefetching(for indexes: [Int]) {
+    let uris = indexes.flatMap { item(for: $0)?.photoUri }
+    uris.forEach(cancelTask)
+  }
+  
+  private func downloadImage(_ uri: String) {
+    dependencies.network.downloadImage(for: uri) { [weak self] result in
+      switch result {
+      case .success(let data):
+        self?.dependencies.cache.add(data, for: uri)
+      default: break
+      }
+    }
+  }
+  
+  private func cancelTask(_ uri: String) {
+    dependencies.network.cancelTask(for: uri)
   }
 
 }

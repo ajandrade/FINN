@@ -71,10 +71,13 @@ extension AdsListViewController: UICollectionViewDelegate, UICollectionViewDeleg
 extension AdsListViewController: UICollectionViewDataSourcePrefetching {
   
   func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-    
+    let indexes = indexPaths.map { $0.row }
+    presenter.startPrefetching(for: indexes)
   }
   
   func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-    
+    let indexes = indexPaths.map { $0.row }
+    presenter.cancelPrefetching(for: indexes)
   }
+  
 }
