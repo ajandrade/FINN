@@ -9,29 +9,54 @@
 import Foundation
 
 protocol AdCellPresenterRepresentable {
-  var photoUrl: URL? { get }
+  var photoUri: String? { get }
   var price: String { get }
   var location: String { get }
   var adDescription: String { get }
   var isFavourite: Bool { get }
+  
+  func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
 struct AdCellPresenter: AdCellPresenterRepresentable {
-  let photoUrl: URL?
+  
+  // MARK: - DEPENDENCIES
+  
+  typealias Dependencies = HasNetworkProvider
+  private let dependencies: Dependencies
+
+  // MARK: - PROPERTIES
+  
+  let photoUri: String?
   let price: String
   let location: String
   let adDescription: String
   let isFavourite: Bool
   
-  init(ad: NormalAd) {
-    if let adPrice = ad.price {
+  // MARK: - INITIALIZER
+  
+  init(dependencies: Dependencies, normalAd: NormalAd) {
+    self.dependencies = dependencies
+    if let adPrice = normalAd.price {
       price = "\(adPrice),-"
     } else {
       price = "Gis bort"
     }
-    location = ad.location ?? "Unknown location"
-    adDescription = ad.adDescription ?? "No description"
-    isFavourite = ad.isFavourite
-    photoUrl = nil // TODO: update
+    location = normalAd.location ?? "Unknown location"
+    adDescription = normalAd.adDescription ?? "No description"
+    isFavourite = normalAd.isFavourite
+    photoUri = normalAd.photoUri
   }
+  
+  func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    dependencies.network.downloadImage(for: uri) { result in
+      switch result {
+      case .success(let data):
+        completion(.success(data))
+      case .failure:
+        completion(.failure(NetworkError.noImage))
+      }
+    }
+  }
+  
 }

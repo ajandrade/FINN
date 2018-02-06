@@ -9,7 +9,7 @@
 import Foundation
 
 enum FINNImageAPI {
-  case image
+  case image(String)
 }
 
 extension FINNImageAPI: API {
@@ -17,7 +17,7 @@ extension FINNImageAPI: API {
   static var baseURLString: String {
     let scheme = Configuration.Network.FINNImageSchema.value
     let path = Configuration.Network.FINNImageBasePath.value
-    return "\(scheme)://\(path)/"
+    return "\(scheme)://\(path)"
   }
   
   var method: String {
@@ -29,8 +29,8 @@ extension FINNImageAPI: API {
   
   var path: String {
     switch self {
-    case .image:
-      return "dynamic/480x360c/"
+    case .image(let uri):
+      return "/dynamic/480x360c/\(uri)"
     }
   }
   

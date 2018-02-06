@@ -17,7 +17,7 @@ extension FINNAdsAPI: API {
   static var baseURLString: String {
     let scheme = Configuration.Network.FINNAPISchema.value
     let path = Configuration.Network.FINNAPIBasePath.value
-    return "\(scheme)://\(path)/"
+    return "\(scheme)://\(path)"
   }
   
   var method: String {
@@ -30,7 +30,7 @@ extension FINNAdsAPI: API {
   var path: String {
     switch self {
     case .adsList:
-      return "3lvis/3799feea005ed49942dcb56386ecec2b/raw/63249144485884d279d55f4f3907e37098f55c74/discover.json"
+      return "/3lvis/3799feea005ed49942dcb56386ecec2b/raw/63249144485884d279d55f4f3907e37098f55c74/discover.json"
     }
   }
   

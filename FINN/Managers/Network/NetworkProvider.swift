@@ -10,13 +10,18 @@ import Foundation
 
 protocol NetworkProviderRepresentable {
   func getAds(_ completion: @escaping (Result<Data, NetworkError>) -> Void)
+  func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
-struct NetworkProvider: NetworkProviderRepresentable {
+class NetworkProvider: NetworkProviderRepresentable {
+  
+  // MARK: - DEPENDENCIES
+  
+  private let session: URLSessionProtocol
   
   // MARK: - PROPERTIES
   
-  private let session: URLSessionProtocol
+  private var tasks = [URLSessionTask]()
   
   // MARK: - INITIALIZER
   
@@ -50,8 +55,29 @@ struct NetworkProvider: NetworkProviderRepresentable {
       }
       completion(.success(data))
     }
-    
     task.resume()
+    tasks.append(task)
+  }
+  
+  func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    let urlRequest: URLRequest
+    do {
+      urlRequest = try FINNImageAPI.image(uri).asURLRequest()
+    } catch {
+      completion(.failure(NetworkError.wrongUrl(FINNImageAPI.baseURLString)))
+      return
+    }
+    
+    guard tasks.index(where: { $0.originalRequest == urlRequest }) == nil else { return }
+    let task = URLSession.shared.dataTask(with: urlRequest) { data, _, _ in
+      if let `data` = data {
+        completion(.success(data))
+      } else {
+        completion(.failure(NetworkError.noImage))
+      }
+    }
+    task.resume()
+    tasks.append(task)
   }
   
 }

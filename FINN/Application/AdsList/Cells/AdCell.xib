@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGW-IW-jGV">
                         <rect key="frame" x="0.0" y="0.0" width="179" height="240"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-6I-d59" customClass="AdPhotoImageView" customModule="FINN" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-6I-d59" customClass="AdPhotoImageView" customModule="FINN" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="179" height="180"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd2-PQ-ELv">
@@ -75,9 +75,14 @@
                                 </constraints>
                                 <color key="color" red="0.71372549019607845" green="0.94509803921568625" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0ZC-lg-5Kt">
+                                <rect key="frame" x="79.5" y="80" width="20" height="20"/>
+                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0ZC-lg-5Kt" firstAttribute="centerY" secondItem="tIB-6I-d59" secondAttribute="centerY" id="4tO-Hh-V91"/>
                             <constraint firstAttribute="trailing" secondItem="tIB-6I-d59" secondAttribute="trailing" id="56P-rr-fzR"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" id="AOf-no-uOF"/>
                             <constraint firstItem="lIF-Ii-egj" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="1" id="BKY-Ve-xOM"/>
@@ -89,6 +94,7 @@
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="bottom" secondItem="tIB-6I-d59" secondAttribute="bottom" id="QPY-5u-ALN"/>
                             <constraint firstItem="tIB-6I-d59" firstAttribute="height" secondItem="EGW-IW-jGV" secondAttribute="height" multiplier="0.75" id="YVT-Uh-0GU"/>
                             <constraint firstAttribute="trailing" secondItem="iG9-xJ-UZc" secondAttribute="trailing" constant="10" id="bHC-5I-riq"/>
+                            <constraint firstItem="0ZC-lg-5Kt" firstAttribute="centerX" secondItem="tIB-6I-d59" secondAttribute="centerX" id="bTc-W9-zkB"/>
                             <constraint firstItem="Dd2-PQ-ELv" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="1" id="dYN-8A-ioz"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="width" secondItem="tIB-6I-d59" secondAttribute="width" multiplier="0.48" id="gBV-gE-fSA"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="centerY" secondItem="OfC-Bp-vAy" secondAttribute="centerY" id="hxG-qY-unZ"/>
@@ -114,6 +120,7 @@
                 <outlet property="activityIndicatorView" destination="N1t-j9-PF4" id="DZz-Jd-IAJ"/>
                 <outlet property="adImageView" destination="tIB-6I-d59" id="rf8-LL-avz"/>
                 <outlet property="descriptionLabel" destination="lIF-Ii-egj" id="cmg-KB-d09"/>
+                <outlet property="downloadIndicatorView" destination="0ZC-lg-5Kt" id="ylD-mz-lrY"/>
                 <outlet property="favouriteButton" destination="iG9-xJ-UZc" id="3FU-Go-m8m"/>
                 <outlet property="locationLabel" destination="Dd2-PQ-ELv" id="KWa-U1-HpQ"/>
                 <outlet property="priceBackgroundView" destination="l4M-Bo-2fO" id="RcC-Vr-c7M"/>
@@ -124,6 +131,5 @@
     </objects>
     <resources>
         <image name="HeartDeselected" width="26" height="22"/>
-        <image name="profile" width="165" height="165"/>
     </resources>
 </document>

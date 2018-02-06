@@ -14,7 +14,7 @@ enum NetworkError: Swift.Error {
   case badResponse
   case withCode(Int)
   case noConnection
-
+  case noImage
 }
 
 extension NetworkError: CustomStringConvertible {
@@ -26,11 +26,13 @@ extension NetworkError: CustomStringConvertible {
     case .wrongUrl(let url):
       return url
     case .badResponse:
-      return "Response is not NSHTTPURLResponse"
+      return "Response is not NSHTTPURLResponse."
     case .withCode(let code):
-      return "Status code: \(code)"
+      return "Status code: \(code)."
     case .noConnection:
       return "No internet connection."
+    case .noImage:
+      return "An error occurred while downloading the image."
     }
   }
   

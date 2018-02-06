@@ -13,7 +13,7 @@ protocol AdsListPresenterRepresentable {
   
   func item(for index: Int) -> AdCellPresenterRepresentable? 
   
-  func getAllAds(_ completion: ((Result<Void, NetworkError>) -> Void)?)
+  func getAllAds(_ completion: @escaping (Result<Void, NetworkError>) -> Void)
 }
 
 class AdsListPresenter: AdsListPresenterRepresentable {
@@ -36,7 +36,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     
   // MARK: - INITIALIZER
   
-  init(dependencies: DependencyContainer) {
+  init(dependencies: Dependencies) {
     self.dependencies = dependencies
   }
   
@@ -47,17 +47,18 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     return allDataPresenters[index]
   }
   
-  func getAllAds(_ completion: ((Result<Void, NetworkError>) -> Void)?) {
+  func getAllAds(_ completion: @escaping (Result<Void, NetworkError>) -> Void) {
     dependencies.network.getAds { [weak self] result in
       guard let `self` = self else { return }
       switch result {
       case .success(let data):
         let allAds = AdsContainer.decodeAds(from: data)
         self.allData = allAds
-        self.allDataPresenters = self.allData.map(AdCellPresenter.init)
-        completion?(.success(()))
+        let cellPresenters = self.allData.map { AdCellPresenter(dependencies: self.dependencies, normalAd: $0) }
+        self.allDataPresenters = cellPresenters
+        completion(.success(()))
       case .failure(let err):
-        completion?(.failure(err))
+        completion(.failure(err))
       }
     }
   }

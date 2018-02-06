@@ -14,7 +14,7 @@ struct NormalAd {
   let adDescription: String?
   let price: Double?
   let photoUri: String?
-  let isFavourite: Bool
+  let isFavourite: Bool  
 }
 
 extension NormalAd: Decodable {
