@@ -36,7 +36,7 @@ class CacheProvider: CacheProviderRepresentable {
   }
   
   func getData(forkey key: String) -> Data? {
-    guard let data = cache.object(forKey: key as NSString) as? Data else { return nil }
+    guard let data = cache.object(forKey: key as NSString) as Data? else { return nil }
     return data
   }
   

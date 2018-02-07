@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 typealias AllDependencies = HasNetworkProvider & HasImageProvider & HasDatabaseProvider & HasCacheProvider
 
@@ -31,4 +32,17 @@ struct DependencyContainer: AllDependencies {
   let image: ImageProviderRepresentable
   let database: DatabaseProviderRepresentable
   let cache: CacheProviderRepresentable
+  
+  static func build() -> DependencyContainer {
+    let network = NetworkProvider()
+    let image = ImageProvider()
+    let cache = CacheProvider()
+    let realm = try? Realm(configuration: RealmConfig.main.configuration)
+    let database = DatabaseProvider(realm)
+    
+    let dependencyContainer = DependencyContainer(network: network, image: image, database: database, cache: cache)
+    
+    return dependencyContainer
+  }
+
 }

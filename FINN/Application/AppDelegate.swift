@@ -20,21 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   private func setRootWindow() {
     window = UIWindow(frame: UIScreen.main.bounds)
-    let dependencies = buildDependencies()
+    let dependencies = DependencyContainer.build()
     let adsListViewController = AdsListViewController()
     let adsListPresenter = AdsListPresenter(dependencies: dependencies)
     adsListViewController.presenter = adsListPresenter
     window?.rootViewController = adsListViewController
     window?.makeKeyAndVisible()
   }
-  
-  private func buildDependencies() -> DependencyContainer {
-    let network = NetworkProvider()
-    let image = ImageProvider()
-    let cache = CacheProvider()
-    let database = DatabaseProvider()
-    let dependencyContainer = DependencyContainer(network: network, image: image, database: database, cache: cache)
-    return dependencyContainer
-  }
-  
+    
 }
