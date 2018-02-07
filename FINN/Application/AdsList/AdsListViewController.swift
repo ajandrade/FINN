@@ -14,6 +14,10 @@ class AdsListViewController: UIViewController {
   
   var presenter: AdsListPresenterRepresentable!
   
+  // MARK: - PROPERTIES
+  
+  private lazy var loadingView = LoadingView(frame: collectionView.bounds, parentView: collectionView)
+  
   // MARK: - IBOUTLETS
   
   @IBOutlet weak var collectionView: UICollectionView! {
@@ -25,8 +29,10 @@ class AdsListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    loadingView.startAnimating()
     presenter.getAllAds { [weak self] result in
       guard let `self` = self else { return }
+      self.loadingView.stopAnimating()
       switch result {
       case .success:
         DispatchQueue.main.async {

@@ -12,6 +12,7 @@
 		E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8B52027434600152D02 /* AppDelegate.swift */; };
 		E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8BC2027434600152D02 /* Assets.xcassets */; };
 		E02A8B01202A33E9007C2C11 /* CacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A8B00202A33E9007C2C11 /* CacheProvider.swift */; };
+		E02A8B03202A6234007C2C11 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A8B02202A6234007C2C11 /* LoadingView.swift */; };
 		E033115D2027ABB300903318 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115C2027ABB300903318 /* Result.swift */; };
 		E033115F2027ABBE00903318 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115E2027ABBE00903318 /* NetworkError.swift */; };
 		E08A199A2028F3B500A4BF3E /* AdPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A19992028F3B500A4BF3E /* AdPrice.swift */; };
@@ -73,6 +74,7 @@
 		E01FD8C62027434600152D02 /* FINNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FINNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01FD8CC2027434600152D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E02A8B00202A33E9007C2C11 /* CacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProvider.swift; sourceTree = "<group>"; };
+		E02A8B02202A6234007C2C11 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E033115C2027ABB300903318 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E033115E2027ABBE00903318 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E08A19992028F3B500A4BF3E /* AdPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPrice.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				E094062920275047008B5FAB /* GraySwitch.swift */,
 				E0940647202795C4008B5FAB /* AdPhotoImageView.swift */,
 				E094064920279685008B5FAB /* PriceSemiRoundedView.swift */,
+				E02A8B02202A6234007C2C11 /* LoadingView.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				E094064A20279685008B5FAB /* PriceSemiRoundedView.swift in Sources */,
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
 				E08A19A22028F4BD00A4BF3E /* FavouriteAd.swift in Sources */,
+				E02A8B03202A6234007C2C11 /* LoadingView.swift in Sources */,
 				E094061B202749FD008B5FAB /* DatabaseProvider.swift in Sources */,
 				E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */,
 				E08A199C2028F3E000A4BF3E /* AdPhoto.swift in Sources */,

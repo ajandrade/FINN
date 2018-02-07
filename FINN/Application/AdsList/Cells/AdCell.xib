@@ -44,7 +44,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4M-Bo-2fO" customClass="PriceSemiRoundedView" customModule="FINN" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="143" width="86" height="37"/>
+                                <rect key="frame" x="0.0" y="143" width="87.5" height="37"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="TWa-K6-QFw"/>
@@ -96,7 +96,7 @@
                             <constraint firstAttribute="trailing" secondItem="iG9-xJ-UZc" secondAttribute="trailing" constant="10" id="bHC-5I-riq"/>
                             <constraint firstItem="0ZC-lg-5Kt" firstAttribute="centerX" secondItem="tIB-6I-d59" secondAttribute="centerX" id="bTc-W9-zkB"/>
                             <constraint firstItem="Dd2-PQ-ELv" firstAttribute="leading" secondItem="EGW-IW-jGV" secondAttribute="leading" constant="1" id="dYN-8A-ioz"/>
-                            <constraint firstItem="l4M-Bo-2fO" firstAttribute="width" secondItem="tIB-6I-d59" secondAttribute="width" multiplier="0.48" id="gBV-gE-fSA"/>
+                            <constraint firstItem="l4M-Bo-2fO" firstAttribute="width" secondItem="tIB-6I-d59" secondAttribute="width" multiplier="0.49" id="gBV-gE-fSA"/>
                             <constraint firstItem="l4M-Bo-2fO" firstAttribute="centerY" secondItem="OfC-Bp-vAy" secondAttribute="centerY" id="hxG-qY-unZ"/>
                             <constraint firstAttribute="trailing" secondItem="Dd2-PQ-ELv" secondAttribute="trailing" constant="4" id="nF0-iR-Mvx"/>
                             <constraint firstItem="tIB-6I-d59" firstAttribute="top" secondItem="EGW-IW-jGV" secondAttribute="top" id="urW-aP-Rqa"/>
