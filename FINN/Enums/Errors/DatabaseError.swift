@@ -12,6 +12,7 @@ enum DatabaseError: Swift.Error {
   case deleting
   case writing
   case noRealmFile
+  case notFound
 }
 
 extension DatabaseError: CustomStringConvertible {
@@ -24,6 +25,8 @@ extension DatabaseError: CustomStringConvertible {
       return "Error while writing to DB."
     case .noRealmFile:
       return "There is no DB file."
+    case .notFound:
+      return "Ad not found."
     }
   }
   

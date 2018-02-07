@@ -12,6 +12,7 @@ import RealmSwift
 typealias FavouriteAds = Results<FavouriteAd>
 
 protocol DatabaseProviderRepresentable {
+  func get(by key: String, _ completion: @escaping (Result<FavouriteAd, DatabaseError>) -> Void)
   func getAll(_ completion: @escaping (Result<FavouriteAds, DatabaseError>) -> Void)
   func create(_ favouriteAd: FavouriteAd, _ completion: @escaping (Result<Void, DatabaseError>) -> Void)
   func delete(_ favouriteAd: FavouriteAd, _ completion: @escaping (Result<Void, DatabaseError>) -> Void)
@@ -30,6 +31,15 @@ class DatabaseProvider: DatabaseProviderRepresentable {
   }
   
   // MARK: - FUNCTIONS
+  
+  func get(by key: String, _ completion: @escaping (Result<FavouriteAd, DatabaseError>) -> Void) {
+    guard let realm = realm else { completion(.failure(DatabaseError.noRealmFile)); return }
+    if let favourite = realm.object(ofType: FavouriteAd.self, forPrimaryKey: key) {
+      completion(.success(favourite))
+    } else {
+      completion(.failure(DatabaseError.notFound))
+    }
+  }
   
   func getAll(_ completion: @escaping (Result<FavouriteAds, DatabaseError>) -> Void) {
     guard let realm = realm else { completion(.failure(DatabaseError.noRealmFile)); return }
