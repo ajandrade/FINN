@@ -17,6 +17,7 @@
 		E033115F2027ABBE00903318 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115E2027ABBE00903318 /* NetworkError.swift */; };
 		E05CC413202B79880017393C /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC412202B79880017393C /* DatabaseError.swift */; };
 		E05CC415202B810F0017393C /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC414202B810F0017393C /* RealmConfig.swift */; };
+		E05CC419202B89440017393C /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC418202B89440017393C /* FileManagerError.swift */; };
 		E08A199A2028F3B500A4BF3E /* AdPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A19992028F3B500A4BF3E /* AdPrice.swift */; };
 		E08A199C2028F3E000A4BF3E /* AdPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A199B2028F3E000A4BF3E /* AdPhoto.swift */; };
 		E08A199E2028F47500A4BF3E /* AdsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A199D2028F47500A4BF3E /* AdsContainer.swift */; };
@@ -28,7 +29,7 @@
 		E09406172027486A008B5FAB /* AdsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09406152027486A008B5FAB /* AdsListViewController.xib */; };
 		E0940619202748A4008B5FAB /* AdsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0940618202748A4008B5FAB /* AdsListPresenter.swift */; };
 		E094061B202749FD008B5FAB /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061A202749FD008B5FAB /* DatabaseProvider.swift */; };
-		E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061C20274A12008B5FAB /* ImageProvider.swift */; };
+		E094061D20274A12008B5FAB /* FileManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061C20274A12008B5FAB /* FileManagerProvider.swift */; };
 		E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061E20274A23008B5FAB /* NetworkProvider.swift */; };
 		E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062020274A38008B5FAB /* DependencyContainer.swift */; };
 		E094062720274CDF008B5FAB /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = E094062620274CDF008B5FAB /* testData.json */; };
@@ -81,6 +82,7 @@
 		E033115E2027ABBE00903318 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E05CC412202B79880017393C /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
 		E05CC414202B810F0017393C /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
+		E05CC418202B89440017393C /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
 		E08A19992028F3B500A4BF3E /* AdPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPrice.swift; sourceTree = "<group>"; };
 		E08A199B2028F3E000A4BF3E /* AdPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPhoto.swift; sourceTree = "<group>"; };
 		E08A199D2028F47500A4BF3E /* AdsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsContainer.swift; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 		E09406152027486A008B5FAB /* AdsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdsListViewController.xib; sourceTree = "<group>"; };
 		E0940618202748A4008B5FAB /* AdsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListPresenter.swift; sourceTree = "<group>"; };
 		E094061A202749FD008B5FAB /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
-		E094061C20274A12008B5FAB /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		E094061C20274A12008B5FAB /* FileManagerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProvider.swift; sourceTree = "<group>"; };
 		E094061E20274A23008B5FAB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		E094062020274A38008B5FAB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		E094062620274CDF008B5FAB /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				E033115E2027ABBE00903318 /* NetworkError.swift */,
 				E05CC412202B79880017393C /* DatabaseError.swift */,
+				E05CC418202B89440017393C /* FileManagerError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -253,7 +256,7 @@
 			children = (
 				E05CC416202B83EF0017393C /* Database */,
 				E094065A2027A7FD008B5FAB /* Network */,
-				E094061C20274A12008B5FAB /* ImageProvider.swift */,
+				E094061C20274A12008B5FAB /* FileManagerProvider.swift */,
 				E02A8B00202A33E9007C2C11 /* CacheProvider.swift */,
 			);
 			path = Managers;
@@ -630,11 +633,12 @@
 				E05CC415202B810F0017393C /* RealmConfig.swift in Sources */,
 				E09406592027A7F8008B5FAB /* FINNImageAPI.swift in Sources */,
 				E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */,
-				E094061D20274A12008B5FAB /* ImageProvider.swift in Sources */,
+				E094061D20274A12008B5FAB /* FileManagerProvider.swift in Sources */,
 				E05CC413202B79880017393C /* DatabaseError.swift in Sources */,
 				E09406572027A4B4008B5FAB /* Configuration.swift in Sources */,
 				E094063820275A90008B5FAB /* UICollectionViewCell.swift in Sources */,
 				E08A199E2028F47500A4BF3E /* AdsContainer.swift in Sources */,
+				E05CC419202B89440017393C /* FileManagerError.swift in Sources */,
 				E08A199A2028F3B500A4BF3E /* AdPrice.swift in Sources */,
 				E094064A20279685008B5FAB /* PriceSemiRoundedView.swift in Sources */,
 				E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */,
