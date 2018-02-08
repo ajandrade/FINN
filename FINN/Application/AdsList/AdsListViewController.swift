@@ -83,6 +83,10 @@ extension AdsListViewController: UICollectionViewDelegate, UICollectionViewDeleg
     let height = width + 60
     return CGSize(width: width, height: height)
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    presenter.cancelPrefetching(for: [indexPath.row])
+  }
 }
 
 extension AdsListViewController: UICollectionViewDataSourcePrefetching {
