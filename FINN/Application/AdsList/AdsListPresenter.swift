@@ -250,10 +250,8 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   
   private func downloadImage(_ uri: String) {
     dependencies.network.downloadImage(for: uri) { [weak self] result in
-      switch result {
-      case .success(let data):
+      if let data = result.value {
         self?.dependencies.cache.add(data, for: uri)
-      default: break
       }
     }
   }
