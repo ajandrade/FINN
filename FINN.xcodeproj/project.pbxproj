@@ -15,6 +15,8 @@
 		E02A8B03202A6234007C2C11 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A8B02202A6234007C2C11 /* LoadingView.swift */; };
 		E033115D2027ABB300903318 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115C2027ABB300903318 /* Result.swift */; };
 		E033115F2027ABBE00903318 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115E2027ABBE00903318 /* NetworkError.swift */; };
+		E0443596202CDB74001E4545 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0443595202CDB74001E4545 /* Alertable.swift */; };
+		E0443598202CDD34001E4545 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0443597202CDD34001E4545 /* Error.swift */; };
 		E05CC413202B79880017393C /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC412202B79880017393C /* DatabaseError.swift */; };
 		E05CC415202B810F0017393C /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC414202B810F0017393C /* RealmConfig.swift */; };
 		E05CC419202B89440017393C /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC418202B89440017393C /* FileManagerError.swift */; };
@@ -80,6 +82,8 @@
 		E02A8B02202A6234007C2C11 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E033115C2027ABB300903318 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E033115E2027ABBE00903318 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E0443595202CDB74001E4545 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		E0443597202CDD34001E4545 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		E05CC412202B79880017393C /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
 		E05CC414202B810F0017393C /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		E05CC418202B89440017393C /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 				E094064520276B7A008B5FAB /* UIColor.swift */,
 				E094065E2027AA8F008B5FAB /* URLSession.swift */,
 				E08A19A32029074200A4BF3E /* UIButton.swift */,
+				E0443597202CDD34001E4545 /* Error.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				E094063920275D40008B5FAB /* Roundable.swift */,
 				E094064F20279DD8008B5FAB /* API.swift */,
 				E094065C2027AA6B008B5FAB /* URLSessionProtocol.swift */,
+				E0443595202CDB74001E4545 /* Alertable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -635,6 +641,7 @@
 				E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */,
 				E094061D20274A12008B5FAB /* FileManagerProvider.swift in Sources */,
 				E05CC413202B79880017393C /* DatabaseError.swift in Sources */,
+				E0443598202CDD34001E4545 /* Error.swift in Sources */,
 				E09406572027A4B4008B5FAB /* Configuration.swift in Sources */,
 				E094063820275A90008B5FAB /* UICollectionViewCell.swift in Sources */,
 				E08A199E2028F47500A4BF3E /* AdsContainer.swift in Sources */,
@@ -649,6 +656,7 @@
 				E08A199C2028F3E000A4BF3E /* AdPhoto.swift in Sources */,
 				E094065020279DD8008B5FAB /* API.swift in Sources */,
 				E094064C20279D9E008B5FAB /* HTTPMethod.swift in Sources */,
+				E0443596202CDB74001E4545 /* Alertable.swift in Sources */,
 				E094065D2027AA6B008B5FAB /* URLSessionProtocol.swift in Sources */,
 				E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */,
 				E094064E20279DC4008B5FAB /* FINNAdsAPI.swift in Sources */,

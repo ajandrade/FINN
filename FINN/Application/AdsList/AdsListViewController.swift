@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdsListViewController: UIViewController {
+class AdsListViewController: UIViewController, Alertable {
   
   // MARK: - DEPENDENCIES
   
@@ -31,7 +31,7 @@ class AdsListViewController: UIViewController {
     super.viewDidLoad()
     
     loadingView.startAnimating()
-
+    
     presenter.loadInitialData { [weak self] result in
       self?.loadingView.stopAnimating()
       switch result {
@@ -40,7 +40,7 @@ class AdsListViewController: UIViewController {
           self?.collectionView.reloadData()
         }
       case .failure(let err):
-        print(err.localizedDescription)
+        self?.showAlert(with: err.message)
       }
     }
     
@@ -62,10 +62,10 @@ class AdsListViewController: UIViewController {
       switch result {
       case .success:
         self?.collectionView.reloadData()
-        sender.isUserInteractionEnabled = true
       case .failure(let err):
-        print(err)
+        self?.showAlert(with: err.message)
       }
+      sender.isUserInteractionEnabled = true
     }
   }
   
