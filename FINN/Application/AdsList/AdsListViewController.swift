@@ -44,6 +44,14 @@ class AdsListViewController: UIViewController {
         print(err.description)
       }
     }
+    
+    presenter.didUpdateFavourite = { [weak self] index in
+      guard let `self` = self else { return }
+      let indexPath = IndexPath(item: index, section: 0)
+      if self.collectionView.indexPathsForVisibleItems.contains(indexPath) {
+        self.collectionView.reloadItems(at: [indexPath])
+      }
+    }
   }
   
   // MARK: - IBACTIONS

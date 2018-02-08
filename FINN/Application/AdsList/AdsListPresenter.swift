@@ -20,6 +20,8 @@ protocol AdsListPresenterRepresentable {
   
   func setFavourite(_ isFavourite: Bool, for index: Int)
   func showFavourites(_ show: Bool, _ completion: @escaping () -> Void)
+  
+  var didUpdateFavourite: ((Int) -> Void)? { get set }
 }
 
 class AdsListPresenter: AdsListPresenterRepresentable {
@@ -39,6 +41,8 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   var numberOfItems: Int {
     return dataSource.count
   }
+  
+  var didUpdateFavourite: ((Int) -> Void)?
   
   // MARK: - INITIALIZER
   
@@ -100,7 +104,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     if isFavourite {
       addFavourite(item, index: index)
     } else {
-      removeFavourite(item)
+      removeFavourite(item, index: index)
     }
   }
   
@@ -114,12 +118,12 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     }
   }
   
-  private func removeFavourite(_ item: AdCellPresenterRepresentable) {
+  private func removeFavourite(_ item: AdCellPresenterRepresentable, index: Int) {
     dependencies.database.get(by: item.identifier) { result in
       switch result {
       case .success(let ad):
         self.removeImage(item.identifier)
-        self.removeFromDatabase(ad)
+        self.removeFromDatabase(ad, index: index)
       case .failure(let err):
         print(err.description)
       }
@@ -147,6 +151,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
       switch result {
       case .success:
         print("Created new favourite")
+        self.didUpdateFavourite?(index)
       case .failure(let err):
         print(err.description)
       }
@@ -164,11 +169,12 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     })
   }
   
-  private func removeFromDatabase(_ favouriteAd: FavouriteAd) {
+  private func removeFromDatabase(_ favouriteAd: FavouriteAd, index: Int) {
     dependencies.database.delete(favouriteAd, { result in
       switch result {
       case .success:
         print("Removed favourite from DB")
+        self.didUpdateFavourite?(index)
       case .failure(let err):
         print(err.description)
       }

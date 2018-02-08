@@ -34,6 +34,7 @@ class AdCell: UICollectionViewCell {
   // MARK: - CONFIGURATION
   
   func configure(with presenter: AdCellPresenterRepresentable) {
+    activityIndicatorView.stopAnimating()
     priceLabel.text = presenter.price
     locationLabel.text = presenter.location
     descriptionLabel.text = presenter.adDescription
@@ -85,15 +86,11 @@ class AdCell: UICollectionViewCell {
   // MARK: - IBACTIONS
   
   @IBAction func onFavouritePressed(_ sender: UIButton) {
-    let isFavouriteAlready = sender.isSelected
-    if isFavouriteAlready {
-      favouriteButton.setImageForAllStates(deselectedImage)
+    activityIndicatorView.startAnimating()
+    if sender.isSelected {
       favouriteSelected?(false)
-      favouriteButton.isSelected = false
     } else {
-      favouriteButton.setImageForAllStates(selectedImage)
       favouriteSelected?(true)
-      favouriteButton.isSelected = true
     }
   }
   
