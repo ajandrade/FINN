@@ -9,9 +9,9 @@
 import Foundation
 
 protocol FileManagerProviderRepresentable {
-  func load(from path: URL, _ completion: @escaping (Result<Data, FileManagerError>) -> Void)
-  func write(_ data: Data, _ completion: @escaping (Result<URL, FileManagerError>) -> Void)
-  func delete(from path: URL, _ completion: @escaping (Result<Void, FileManagerError>) -> Void)
+  func load(from identifier: String, _ completion: @escaping (Result<Data, FileManagerError>) -> Void)
+  func write(_ data: Data, for identifier: String, _ completion: @escaping (Result<URL, FileManagerError>) -> Void)
+  func delete(_ identifier: String, _ completion: @escaping (Result<Void, FileManagerError>) -> Void)
 }
 
 class FileManagerProvider: FileManagerProviderRepresentable {
@@ -35,10 +35,11 @@ class FileManagerProvider: FileManagerProviderRepresentable {
   
   // MARK: - FUNCTIONS
   
-  func load(from path: URL, _ completion: @escaping (Result<Data, FileManagerError>) -> Void) {
-    if fileManager.fileExists(atPath: path.absoluteString) {
+  func load(from identifier: String, _ completion: @escaping (Result<Data, FileManagerError>) -> Void) {
+    let filename = getDocumentsDirectory.appendingPathComponent("\(identifier).png")
+    if fileManager.fileExists(atPath: filename.path) {
       do {
-        let data = try Data(contentsOf: path)
+        let data = try Data(contentsOf: filename)
         completion(.success(data))
       } catch {
         completion(.failure(FileManagerError.doesntExist))
@@ -48,8 +49,8 @@ class FileManagerProvider: FileManagerProviderRepresentable {
     }
   }
   
-  func write(_ data: Data, _ completion: @escaping (Result<URL, FileManagerError>) -> Void) {
-    let filename = getDocumentsDirectory.appendingPathComponent("\(UUID().uuidString).png")
+  func write(_ data: Data, for identifier: String, _ completion: @escaping (Result<URL, FileManagerError>) -> Void) {
+    let filename = getDocumentsDirectory.appendingPathComponent("\(identifier).png")
     do {
       try data.write(to: filename)
       completion(.success(filename))
@@ -58,12 +59,14 @@ class FileManagerProvider: FileManagerProviderRepresentable {
     }
   }
   
-  func delete(from path: URL, _ completion: @escaping (Result<Void, FileManagerError>) -> Void) {
+  func delete(_ identifier: String, _ completion: @escaping (Result<Void, FileManagerError>) -> Void) {
+    let filename = getDocumentsDirectory.appendingPathComponent("\(identifier).png")
     do {
-      try fileManager.removeItem(at: path)
+      try fileManager.removeItem(at: filename)
       completion(.success(()))
     } catch {
       completion(.failure(FileManagerError.deleting))
     }
   }
+  
 }

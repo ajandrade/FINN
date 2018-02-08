@@ -17,6 +17,9 @@ protocol AdsListPresenterRepresentable {
   
   func startPrefetching(for indexes: [Int])
   func cancelPrefetching(for indexes: [Int])
+  
+  func setFavourite(_ isFavourite: Bool, for index: Int)
+  
 }
 
 class AdsListPresenter: AdsListPresenterRepresentable {
@@ -36,7 +39,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   var numberOfItems: Int {
     return allDataPresenters.count
   }
-    
+  
   // MARK: - INITIALIZER
   
   init(dependencies: Dependencies) {
@@ -66,6 +69,89 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     }
   }
   
+  // MARK: - FAVOURITES
+  
+  func setFavourite(_ isFavourite: Bool, for index: Int) {
+    guard var item = item(for: index) else { return }
+    item.isFavourite = isFavourite
+    if isFavourite {
+      addFavourite(item, index: index)
+    } else {
+      removeFavourite(item)
+    }
+  }
+  
+  private func addFavourite(_ item: AdCellPresenterRepresentable, index: Int) {
+    if let imageData = item.cachedData {
+      storeImage(data: imageData, with: item.identifier, for: index, { fileUrl in
+        self.saveOnDatabase(for: index, photoUrl: fileUrl)
+      })
+    } else {
+      saveOnDatabase(for: index)
+    }
+  }
+  
+  private func removeFavourite(_ item: AdCellPresenterRepresentable) {
+    dependencies.database.get(by: item.identifier) { result in
+      switch result {
+      case .success(let ad):
+        self.removeImage(item.identifier)
+        self.removeFromDatabase(ad)
+      case .failure(let err):
+        print(err.description)
+      }
+    }
+  }
+  
+  private func storeImage(data: Data, with identifier: String, for index: Int, _ completion: @escaping (URL) -> Void) {
+    dependencies.fileManager.write(data, for: identifier) { result in
+      switch result {
+      case .success(let fileUrl):
+        print(fileUrl)
+        self.saveOnDatabase(for: index, photoUrl: fileUrl)
+      case .failure(let err):
+        print(err)
+        self.saveOnDatabase(for: index)
+      }
+    }
+  }
+  
+  private func saveOnDatabase(for index: Int, photoUrl: URL? = nil) {
+    if allData.isEmpty || index > allData.count { return }
+    let normalAd = allData[index]
+    let favouriteAd = FavouriteAd(normalAd: normalAd)
+    dependencies.database.create(favouriteAd) { result in
+      switch result {
+      case .success:
+        print("Created new favourite")
+      case .failure(let err):
+        print(err.description)
+      }
+    }
+  }
+  
+  private func removeImage(_ identifier: String) {
+    dependencies.fileManager.delete(identifier, { result in
+      switch result {
+      case .success:
+        print("Removed image")
+      case .failure(let err):
+        print(err.description)
+      }
+    })
+  }
+  
+  private func removeFromDatabase(_ favouriteAd: FavouriteAd) {
+    dependencies.database.delete(favouriteAd, { result in
+      switch result {
+      case .success:
+        print("Removed favourite from DB")
+      case .failure(let err):
+        print(err.description)
+      }
+    })
+  }
+  
   // MARK: - PREFETCHING
   
   func startPrefetching(for indexes: [Int]) {
@@ -91,5 +177,5 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   private func cancelTask(_ uri: String) {
     dependencies.network.cancelTask(for: uri)
   }
-
+  
 }

@@ -57,8 +57,8 @@ extension AdsListViewController: UICollectionViewDataSource {
     guard let item = presenter.item(for: indexPath.row) else { return AdCell() }
     let cell = collectionView.dequeueCell(for: indexPath) as AdCell
     cell.configure(with: item)
-    cell.favouriteSelected = { [weak self] in
-      print("Favourite!")
+    cell.favouriteSelected = { [weak self] isFavourite in
+      self?.presenter.setFavourite(isFavourite, for: indexPath.row)
     }
     return cell
   }

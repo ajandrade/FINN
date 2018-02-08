@@ -12,6 +12,7 @@ enum FileManagerError: Swift.Error {
   case deleting
   case writing
   case doesntExist
+  case alreadyExists
 }
 
 extension FileManagerError: CustomStringConvertible {
@@ -24,6 +25,8 @@ extension FileManagerError: CustomStringConvertible {
       return "Error while writing to file manager."
     case .doesntExist:
       return "File does not exist."
+    case .alreadyExists:
+      return "File already exists."
     }
   }
   

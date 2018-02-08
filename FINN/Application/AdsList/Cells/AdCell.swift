@@ -29,7 +29,7 @@ class AdCell: UICollectionViewCell {
 
   // MARK: - PROPERTIES
   
-  var favouriteSelected: (() -> Void)?
+  var favouriteSelected: ((Bool) -> Void)?
   
   // MARK: - CONFIGURATION
   
@@ -38,8 +38,10 @@ class AdCell: UICollectionViewCell {
     locationLabel.text = presenter.location
     descriptionLabel.text = presenter.adDescription
     if presenter.isFavourite {
+      favouriteButton.isSelected = true
       favouriteButton.setImageForAllStates(selectedImage)
     } else {
+      favouriteButton.isSelected = false
       favouriteButton.setImageForAllStates(deselectedImage)
     }
     cellDownloadId = presenter.photoUri ?? ""
@@ -83,7 +85,16 @@ class AdCell: UICollectionViewCell {
   // MARK: - IBACTIONS
   
   @IBAction func onFavouritePressed(_ sender: UIButton) {
-    favouriteSelected?()
+    let isFavouriteAlready = sender.isSelected
+    if isFavouriteAlready {
+      favouriteButton.setImageForAllStates(deselectedImage)
+      favouriteSelected?(false)
+      favouriteButton.isSelected = false
+    } else {
+      favouriteButton.setImageForAllStates(selectedImage)
+      favouriteSelected?(true)
+      favouriteButton.isSelected = true
+    }
   }
   
 }

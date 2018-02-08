@@ -53,7 +53,7 @@ class DatabaseProvider: DatabaseProviderRepresentable {
     
     do {
       try realm.write {
-        realm.add(favouriteAd)
+        realm.add(favouriteAd, update: true)
         completion(.success(()))
       }
     } catch {

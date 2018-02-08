@@ -9,18 +9,19 @@
 import Foundation
 
 protocol AdCellPresenterRepresentable {
+  var identifier: String { get }
   var photoUri: String? { get }
   var price: String { get }
   var location: String { get }
   var adDescription: String { get }
-  var isFavourite: Bool { get }
+  var isFavourite: Bool { get set }
   
   var cachedData: Data? { get }
   
   func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
-struct AdCellPresenter: AdCellPresenterRepresentable {
+class AdCellPresenter: AdCellPresenterRepresentable {
   
   // MARK: - DEPENDENCIES
   
@@ -29,11 +30,12 @@ struct AdCellPresenter: AdCellPresenterRepresentable {
   
   // MARK: - PROPERTIES
   
+  let identifier: String
   let photoUri: String?
   let price: String
   let location: String
   let adDescription: String
-  let isFavourite: Bool
+  var isFavourite: Bool
   
   var cachedData: Data? {
     guard let uri = photoUri, let cachedData = dependencies.cache.getData(forkey: uri) else { return nil }
@@ -44,6 +46,7 @@ struct AdCellPresenter: AdCellPresenterRepresentable {
   
   init(dependencies: Dependencies, normalAd: NormalAd) {
     self.dependencies = dependencies
+    identifier = normalAd.identifier
     if let adPrice = normalAd.price {
       price = "\(adPrice),-"
     } else {
