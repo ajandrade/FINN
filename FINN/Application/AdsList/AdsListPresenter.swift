@@ -115,21 +115,14 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   }
   
   private func setDataSource(matching ids: [String]) {
-    // Switching screens, update presenters
     let newPresenters: [AdCellPresenterRepresentable]
     if ids.isEmpty {
       newPresenters = self.allAdsContainer.map { AdCellPresenter(dependencies: self.dependencies, normalAd: $0) }
     } else {
       newPresenters = self.allAdsContainer.map { normalAd in
-        if ids.contains(normalAd.identifier) {
-          // Is favourite
-          let cellPresenter = AdCellPresenter(dependencies: self.dependencies, normalAd: normalAd)
-          cellPresenter.isFavourite = true
-          return cellPresenter
-        } else {
-          // Is not favourite
-          return AdCellPresenter(dependencies: self.dependencies, normalAd: normalAd)
-        }
+        let cellPresenter = AdCellPresenter(dependencies: self.dependencies, normalAd: normalAd)
+        cellPresenter.isFavourite = ids.contains(normalAd.identifier) ? true : false
+        return cellPresenter
       }
     }
     self.dataSource = newPresenters
