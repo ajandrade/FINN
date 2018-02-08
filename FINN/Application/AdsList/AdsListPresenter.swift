@@ -9,18 +9,17 @@
 import Foundation
 
 protocol AdsListPresenterRepresentable {
+  // CollectionView Data
   var numberOfItems: Int { get }
-  
   func item(for index: Int) -> AdCellPresenterRepresentable? 
-  
-  func getAllAds(_ completion: @escaping (Result<Void, NetworkError>) -> Void)
-  
+  // Prefetch
   func startPrefetching(for indexes: [Int])
   func cancelPrefetching(for indexes: [Int])
-  
+  // Data loading
+  func loadInitialData(_ completion: @escaping (Result<Void, Error>) -> Void)
+  func switchData(_ showFavourites: Bool, _ completion: @escaping (Result<Void, Error>) -> Void)
+  // Favourites
   func setFavourite(_ isFavourite: Bool, for index: Int)
-  func showFavourites(_ show: Bool, _ completion: @escaping () -> Void)
-  
   var didUpdateFavourite: ((Int) -> Void)? { get set }
 }
 
@@ -33,10 +32,10 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   
   // MARK: - PRIVATE PROPERTIES
   
-  private var allData = [NormalAd]()
+  private var allAdsContainer = [NormalAd]()
   private var dataSource = [AdCellPresenterRepresentable]()
   
-  // MARK: - OUTPUT PROPERTIES
+  // MARK: - PROPERTIES
   
   var numberOfItems: Int {
     return dataSource.count
@@ -50,46 +49,108 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     self.dependencies = dependencies
   }
   
-  // MARK: - FUNCTIONS
-  
-  func showFavourites(_ show: Bool, _ completion: @escaping () -> Void) {
-    if show {
-      dependencies.database.getAll { result in
-        switch result {
-        case .success(let favourites):
-          self.dataSource = []
-          favourites.forEach {
-            let presenter = AdCellPresenter(dependencies: self.dependencies, normalAd: $0.asNormal())
-            self.dataSource.append(presenter)
-          }
-          print(self.dataSource.count)
-          completion()
-        case .failure(let err):
-          print(err)
-        }
-      }
-    } else {
-      let cellPresenters = self.allData.map { AdCellPresenter(dependencies: self.dependencies, normalAd: $0) }
-      self.dataSource = cellPresenters
-      completion()
-    }
-  }
+  // MARK: - COLLECTION VIEW DATA
   
   func item(for index: Int) -> AdCellPresenterRepresentable? {
     if dataSource.isEmpty || index > dataSource.count { return nil }
     return dataSource[index]
   }
   
-  func getAllAds(_ completion: @escaping (Result<Void, NetworkError>) -> Void) {
-    dependencies.network.getAds { [weak self] result in
+  // MARK: - DATA LOADING
+  
+  func loadInitialData(_ completion: @escaping (Result<Void, Error>) -> Void) {
+    switchData(false, completion)
+  }
+  
+  func switchData(_ showFavourites: Bool, _ completion: @escaping (Result<Void, Error>) -> Void) {
+    if showFavourites {
+      showFavouritesData(completion)
+    } else {
+      showInitialData(completion)
+    }
+  }
+  
+  private func showFavouritesData(_ completion: @escaping (Result<Void, Error>) -> Void) {
+    getAllFavourites { result in
+      switch result {
+      case .success(let favourites):
+        self.dataSource = []
+        favourites.forEach {
+          let presenter = AdCellPresenter(dependencies: self.dependencies, normalAd: $0.asNormal())
+          self.dataSource.append(presenter)
+        }
+        completion(.success(()))
+      case .failure(let err):
+        completion(.failure(err))
+      }
+    }
+  }
+  
+  private func showInitialData(_ completion: @escaping (Result<Void, Error>) -> Void) {
+    getAllFavourites { [weak self] result in
       guard let `self` = self else { return }
+      
+      let favourites = result.value
+      var favouriteAdsIds = [String]()
+      favourites?.forEach { favouriteAdsIds.append($0.identifier) }
+      
+      if self.allAdsContainer.isEmpty {
+        // First time in the app OR empty data, make network request
+        self.getAllAds { result in
+          switch result {
+          case .success(let data):
+            self.allAdsContainer = AdsContainer.decodeAds(from: data)
+            self.setDataSource(matching: favouriteAdsIds)
+            completion(.success(()))
+          case .failure(let err):
+            completion(.failure(err))
+          }
+        }
+      } else {
+        // Switching screens, update presenters
+        self.setDataSource(matching: favouriteAdsIds)
+        completion(.success(()))
+      }
+    }
+  }
+  
+  private func setDataSource(matching ids: [String]) {
+    // Switching screens, update presenters
+    let newPresenters: [AdCellPresenterRepresentable]
+    if ids.isEmpty {
+      newPresenters = self.allAdsContainer.map { AdCellPresenter(dependencies: self.dependencies, normalAd: $0) }
+    } else {
+      newPresenters = self.allAdsContainer.map { normalAd in
+        if ids.contains(normalAd.identifier) {
+          // Is favourite
+          let cellPresenter = AdCellPresenter(dependencies: self.dependencies, normalAd: normalAd)
+          cellPresenter.isFavourite = true
+          return cellPresenter
+        } else {
+          // Is not favourite
+          return AdCellPresenter(dependencies: self.dependencies, normalAd: normalAd)
+        }
+      }
+    }
+    self.dataSource = newPresenters
+  }
+  
+  private func getAllFavourites(_ completion: @escaping (Result<FavouriteAds, DatabaseError>) -> Void) {
+    dependencies.database.getAll { result in
+      switch result {
+      case .success(let favourites):
+        completion(.success(favourites))
+      case .failure(let err):
+        completion(.failure(err))
+      }
+    }
+  }
+  
+  private func getAllAds(_ completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    dependencies.network.getAds { result in
       switch result {
       case .success(let data):
-        let allAds = AdsContainer.decodeAds(from: data)
-        self.allData = allAds
-        let cellPresenters = self.allData.map { AdCellPresenter(dependencies: self.dependencies, normalAd: $0) }
-        self.dataSource = cellPresenters
-        completion(.success(()))
+        completion(.success(data))
       case .failure(let err):
         completion(.failure(err))
       }
@@ -110,9 +171,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   
   private func addFavourite(_ item: AdCellPresenterRepresentable, index: Int) {
     if let imageData = item.cachedData {
-      storeImage(data: imageData, with: item.identifier, for: index, { _ in
-        self.saveOnDatabase(for: index)
-      })
+      storeImage(data: imageData, with: item.identifier, for: index)
     } else {
       saveOnDatabase(for: index)
     }
@@ -130,7 +189,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     }
   }
   
-  private func storeImage(data: Data, with identifier: String, for index: Int, _ completion: @escaping (URL) -> Void) {
+  private func storeImage(data: Data, with identifier: String, for index: Int) {
     dependencies.fileManager.write(data, for: identifier) { result in
       switch result {
       case .success:
@@ -143,8 +202,8 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   }
   
   private func saveOnDatabase(for index: Int) {
-    if allData.isEmpty || index > allData.count { return }
-    let normalAd = allData[index]
+    if allAdsContainer.isEmpty || index > allAdsContainer.count { return }
+    let normalAd = allAdsContainer[index]
     let favouriteAd = FavouriteAd(normalAd: normalAd)
     dependencies.database.create(favouriteAd) { result in
       switch result {
@@ -180,7 +239,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     })
   }
   
-  // MARK: - PREFETCHING
+  // MARK: - PREFETCH
   
   func startPrefetching(for indexes: [Int]) {
     let uris = indexes.flatMap { item(for: $0)?.photoUri }

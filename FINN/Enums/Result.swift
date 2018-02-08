@@ -11,4 +11,23 @@ import Foundation
 enum Result<T, E> {
   case success(T)
   case failure(E)
+  
+  var value: T? {
+    switch self {
+    case .success(let value):
+      return value
+    case .failure:
+      return nil
+    }
+  }
+  
+  var error: E? {
+    switch self {
+    case .success:
+      return nil
+    case .failure(let error):
+      return error
+    }
+  }
+
 }

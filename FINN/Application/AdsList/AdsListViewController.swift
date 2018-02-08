@@ -31,17 +31,16 @@ class AdsListViewController: UIViewController {
     super.viewDidLoad()
     
     loadingView.startAnimating()
-    presenter.getAllAds { [weak self] result in
-      guard let `self` = self else { return }
-      self.loadingView.stopAnimating()
+
+    presenter.loadInitialData { [weak self] result in
+      self?.loadingView.stopAnimating()
       switch result {
       case .success:
         DispatchQueue.main.async {
-          self.collectionView.reloadData()
+          self?.collectionView.reloadData()
         }
-        print("Ok")
       case .failure(let err):
-        print(err.description)
+        print(err.localizedDescription)
       }
     }
     
@@ -52,15 +51,21 @@ class AdsListViewController: UIViewController {
         self.collectionView.reloadItems(at: [indexPath])
       }
     }
+    
   }
   
   // MARK: - IBACTIONS
   
   @IBAction func switchDidChange(_ sender: UISwitch) {
     sender.isUserInteractionEnabled = false
-    presenter.showFavourites(sender.isOn) {
-      self.collectionView.reloadData()
-      sender.isUserInteractionEnabled = true
+    presenter.switchData(sender.isOn) { [weak self] result in
+      switch result {
+      case .success:
+        self?.collectionView.reloadData()
+        sender.isUserInteractionEnabled = true
+      case .failure(let err):
+        print(err)
+      }
     }
   }
   
@@ -92,9 +97,6 @@ extension AdsListViewController: UICollectionViewDelegate, UICollectionViewDeleg
     return CGSize(width: width, height: height)
   }
   
-  func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    presenter.cancelPrefetching(for: [indexPath.row])
-  }
 }
 
 extension AdsListViewController: UICollectionViewDataSourcePrefetching {
