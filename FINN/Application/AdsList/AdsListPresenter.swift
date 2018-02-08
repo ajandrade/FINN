@@ -19,7 +19,7 @@ protocol AdsListPresenterRepresentable {
   func cancelPrefetching(for indexes: [Int])
   
   func setFavourite(_ isFavourite: Bool, for index: Int)
-  
+  func showFavourites(_ show: Bool, _ completion: @escaping () -> Void)
 }
 
 class AdsListPresenter: AdsListPresenterRepresentable {
@@ -32,12 +32,12 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   // MARK: - PRIVATE PROPERTIES
   
   private var allData = [NormalAd]()
-  private var allDataPresenters = [AdCellPresenterRepresentable]()
+  private var dataSource = [AdCellPresenterRepresentable]()
   
   // MARK: - OUTPUT PROPERTIES
   
   var numberOfItems: Int {
-    return allDataPresenters.count
+    return dataSource.count
   }
   
   // MARK: - INITIALIZER
@@ -48,9 +48,32 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   
   // MARK: - FUNCTIONS
   
+  func showFavourites(_ show: Bool, _ completion: @escaping () -> Void) {
+    if show {
+      dependencies.database.getAll { result in
+        switch result {
+        case .success(let favourites):
+          self.dataSource = []
+          favourites.forEach {
+            let presenter = AdCellPresenter(dependencies: self.dependencies, normalAd: $0.asNormal())
+            self.dataSource.append(presenter)
+          }
+          print(self.dataSource.count)
+          completion()
+        case .failure(let err):
+          print(err)
+        }
+      }
+    } else {
+      let cellPresenters = self.allData.map { AdCellPresenter(dependencies: self.dependencies, normalAd: $0) }
+      self.dataSource = cellPresenters
+      completion()
+    }
+  }
+  
   func item(for index: Int) -> AdCellPresenterRepresentable? {
-    if allDataPresenters.isEmpty || index > allDataPresenters.count { return nil }
-    return allDataPresenters[index]
+    if dataSource.isEmpty || index > dataSource.count { return nil }
+    return dataSource[index]
   }
   
   func getAllAds(_ completion: @escaping (Result<Void, NetworkError>) -> Void) {
@@ -61,7 +84,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
         let allAds = AdsContainer.decodeAds(from: data)
         self.allData = allAds
         let cellPresenters = self.allData.map { AdCellPresenter(dependencies: self.dependencies, normalAd: $0) }
-        self.allDataPresenters = cellPresenters
+        self.dataSource = cellPresenters
         completion(.success(()))
       case .failure(let err):
         completion(.failure(err))

@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdsListViewController" customModule="FINN" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="VEX-Db-Z3o" id="LVU-ke-fC1"/>
+                <outlet property="favouritesSwitch" destination="iwJ-yP-fEb" id="NJz-8r-Vka"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,6 +31,9 @@
                     <subviews>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iwJ-yP-fEb" customClass="GraySwitch" customModule="FINN" customModuleProvider="target">
                             <rect key="frame" x="313" y="32" width="51" height="31"/>
+                            <connections>
+                                <action selector="switchDidChange:" destination="-1" eventType="valueChanged" id="nEN-rX-R2t"/>
+                            </connections>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kun favoritter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRT-A7-7Qf">
                             <rect key="frame" x="13" y="33" width="290" height="25"/>

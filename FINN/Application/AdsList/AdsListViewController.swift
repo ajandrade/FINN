@@ -23,6 +23,7 @@ class AdsListViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView! {
     didSet { collectionView.register(AdCell.self) }
   }
+  @IBOutlet weak var favouritesSwitch: UISwitch!
   
   // MARK: - VIEW LIFE CYCLE
   
@@ -42,6 +43,16 @@ class AdsListViewController: UIViewController {
       case .failure(let err):
         print(err.description)
       }
+    }
+  }
+  
+  // MARK: - IBACTIONS
+  
+  @IBAction func switchDidChange(_ sender: UISwitch) {
+    sender.isUserInteractionEnabled = false
+    presenter.showFavourites(sender.isOn) {
+      self.collectionView.reloadData()
+      sender.isUserInteractionEnabled = true
     }
   }
   
