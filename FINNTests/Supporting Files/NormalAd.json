@@ -1,0 +1,41 @@
+{
+      "image": {
+        "scalable": true,
+        "width": 1600,
+        "type": "GENERAL",
+        "url": "2017/9/vertical-5/30/5/105/424/_1263219766.jpg",
+        "height": 1083
+      },
+      "score": "0.9535993933677673",
+      "ad-type": "BAP",
+      "price": {
+        "value": 300
+      },
+      "description": "Legemidler og bruken av dem",
+      "location": "Laksevåg",
+      "id": "105424045",
+      "type": "AD",
+      "tracking": {
+        "adobe": {
+          "event_name": "meta_recommendation",
+          "type": "stream",
+          "category": "relevant_ad",
+          "url": "https://apps.finn.no/api/stream/discover/"
+        },
+        "ec": {
+          "inScreen": [
+            "https://www.finn.no/ec/USER/recommendationEvents?adIds=105424045&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.inScreen"
+          ],
+          "click": [
+            "https://www.finn.no/ec/AD/NoOfPageViews_Main?finnkode=105424045",
+            "https://www.finn.no/ec/USER/recommendationEvents?finnkode=105424045&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover.click"
+          ]
+        }
+      },
+      "actions": {
+        "block": [
+          "https://www.finn.no/ec/USER/recommend.block?finnkode=105424045&version=finn_meta_discovery_2b&recsys.uuid=80ec2f0c-44c9-435a-aeec-99e164304de9&recsys.position=recommend.app-discover"
+        ]
+      },
+      "version": "finn_meta_discovery_2b.finn_bap_mlt.moreLikeThis"
+    }

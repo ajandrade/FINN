@@ -17,6 +17,14 @@
 		E033115F2027ABBE00903318 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E033115E2027ABBE00903318 /* NetworkError.swift */; };
 		E0443596202CDB74001E4545 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0443595202CDB74001E4545 /* Alertable.swift */; };
 		E0443598202CDD34001E4545 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0443597202CDD34001E4545 /* Error.swift */; };
+		E044359B202CE3C5001E4545 /* AdPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044359A202CE3C5001E4545 /* AdPriceTests.swift */; };
+		E044359E202CE4F4001E4545 /* AdPhoto.json in Resources */ = {isa = PBXBuildFile; fileRef = E044359C202CE4F3001E4545 /* AdPhoto.json */; };
+		E044359F202CE4F4001E4545 /* AdPrice.json in Resources */ = {isa = PBXBuildFile; fileRef = E044359D202CE4F4001E4545 /* AdPrice.json */; };
+		E04435A1202CE5C8001E4545 /* AdPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04435A0202CE5C8001E4545 /* AdPhotoTests.swift */; };
+		E04435A3202CE64E001E4545 /* NormalAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04435A2202CE64E001E4545 /* NormalAdTests.swift */; };
+		E04435A5202CE682001E4545 /* NormalAd.json in Resources */ = {isa = PBXBuildFile; fileRef = E04435A4202CE682001E4545 /* NormalAd.json */; };
+		E04435A7202CE964001E4545 /* AdsContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04435A6202CE964001E4545 /* AdsContainerTests.swift */; };
+		E04435A9202CEAA6001E4545 /* FavouriteAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04435A8202CEAA6001E4545 /* FavouriteAdTests.swift */; };
 		E05CC413202B79880017393C /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC412202B79880017393C /* DatabaseError.swift */; };
 		E05CC415202B810F0017393C /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC414202B810F0017393C /* RealmConfig.swift */; };
 		E05CC419202B89440017393C /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC418202B89440017393C /* FileManagerError.swift */; };
@@ -34,7 +42,7 @@
 		E094061D20274A12008B5FAB /* FileManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061C20274A12008B5FAB /* FileManagerProvider.swift */; };
 		E094061F20274A23008B5FAB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094061E20274A23008B5FAB /* NetworkProvider.swift */; };
 		E094062120274A38008B5FAB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062020274A38008B5FAB /* DependencyContainer.swift */; };
-		E094062720274CDF008B5FAB /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = E094062620274CDF008B5FAB /* testData.json */; };
+		E094062720274CDF008B5FAB /* TestData.json in Resources */ = {isa = PBXBuildFile; fileRef = E094062620274CDF008B5FAB /* TestData.json */; };
 		E094062A20275047008B5FAB /* GraySwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062920275047008B5FAB /* GraySwitch.swift */; };
 		E094062F202754BE008B5FAB /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094062D202754BE008B5FAB /* AdCell.swift */; };
 		E0940630202754BE008B5FAB /* AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E094062E202754BE008B5FAB /* AdCell.xib */; };
@@ -84,6 +92,14 @@
 		E033115E2027ABBE00903318 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E0443595202CDB74001E4545 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		E0443597202CDD34001E4545 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		E044359A202CE3C5001E4545 /* AdPriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPriceTests.swift; sourceTree = "<group>"; };
+		E044359C202CE4F3001E4545 /* AdPhoto.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdPhoto.json; sourceTree = "<group>"; };
+		E044359D202CE4F4001E4545 /* AdPrice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AdPrice.json; sourceTree = "<group>"; };
+		E04435A0202CE5C8001E4545 /* AdPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPhotoTests.swift; sourceTree = "<group>"; };
+		E04435A2202CE64E001E4545 /* NormalAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalAdTests.swift; sourceTree = "<group>"; };
+		E04435A4202CE682001E4545 /* NormalAd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NormalAd.json; sourceTree = "<group>"; };
+		E04435A6202CE964001E4545 /* AdsContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsContainerTests.swift; sourceTree = "<group>"; };
+		E04435A8202CEAA6001E4545 /* FavouriteAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAdTests.swift; sourceTree = "<group>"; };
 		E05CC412202B79880017393C /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
 		E05CC414202B810F0017393C /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		E05CC418202B89440017393C /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
@@ -101,7 +117,7 @@
 		E094061C20274A12008B5FAB /* FileManagerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProvider.swift; sourceTree = "<group>"; };
 		E094061E20274A23008B5FAB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		E094062020274A38008B5FAB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
-		E094062620274CDF008B5FAB /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testData.json; sourceTree = "<group>"; };
+		E094062620274CDF008B5FAB /* TestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestData.json; sourceTree = "<group>"; };
 		E094062920275047008B5FAB /* GraySwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraySwitch.swift; sourceTree = "<group>"; };
 		E094062D202754BE008B5FAB /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
 		E094062E202754BE008B5FAB /* AdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdCell.xib; sourceTree = "<group>"; };
@@ -211,6 +227,18 @@
 				E094062420274CB4008B5FAB /* Supporting Files */,
 			);
 			path = FINNTests;
+			sourceTree = "<group>";
+		};
+		E0443599202CE367001E4545 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E044359A202CE3C5001E4545 /* AdPriceTests.swift */,
+				E04435A0202CE5C8001E4545 /* AdPhotoTests.swift */,
+				E04435A2202CE64E001E4545 /* NormalAdTests.swift */,
+				E04435A6202CE964001E4545 /* AdsContainerTests.swift */,
+				E04435A8202CEAA6001E4545 /* FavouriteAdTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E05CC416202B83EF0017393C /* Database */ = {
@@ -344,7 +372,10 @@
 		E094062420274CB4008B5FAB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E094062620274CDF008B5FAB /* testData.json */,
+				E094062620274CDF008B5FAB /* TestData.json */,
+				E04435A4202CE682001E4545 /* NormalAd.json */,
+				E044359C202CE4F3001E4545 /* AdPhoto.json */,
+				E044359D202CE4F4001E4545 /* AdPrice.json */,
 				E01FD8CC2027434600152D02 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -353,6 +384,7 @@
 		E094062520274CBB008B5FAB /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
+				E0443599202CE367001E4545 /* Models */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -457,6 +489,7 @@
 					};
 					E01FD8C52027434600152D02 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E01FD8B12027434600152D02;
 					};
@@ -497,7 +530,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E094062720274CDF008B5FAB /* testData.json in Resources */,
+				E044359F202CE4F4001E4545 /* AdPrice.json in Resources */,
+				E094062720274CDF008B5FAB /* TestData.json in Resources */,
+				E044359E202CE4F4001E4545 /* AdPhoto.json in Resources */,
+				E04435A5202CE682001E4545 /* NormalAd.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +707,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04435A9202CEAA6001E4545 /* FavouriteAdTests.swift in Sources */,
+				E04435A7202CE964001E4545 /* AdsContainerTests.swift in Sources */,
+				E044359B202CE3C5001E4545 /* AdPriceTests.swift in Sources */,
+				E04435A1202CE5C8001E4545 /* AdPhotoTests.swift in Sources */,
+				E04435A3202CE64E001E4545 /* NormalAdTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,12 +873,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8WVW27EH5;
 				INFOPLIST_FILE = "FINNTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amadeuandrade.FINNTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FINN.app/FINN";
@@ -850,6 +893,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P8WVW27EH5;
 				INFOPLIST_FILE = "FINNTests/Supporting Files/Info.plist";
