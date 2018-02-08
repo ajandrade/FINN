@@ -71,7 +71,8 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   }
   
   private func showFavouritesData(_ completion: @escaping (Result<Void, Error>) -> Void) {
-    getAllFavourites { result in
+    getAllFavourites { [weak self] result in
+      guard let `self` = self else { return }
       switch result {
       case .success(let favourites):
         self.dataSource = []
@@ -164,32 +165,35 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   
   private func addFavourite(_ item: AdCellPresenterRepresentable, index: Int) {
     if let imageData = item.cachedData {
-      storeImage(data: imageData, with: item.identifier, for: index)
+      storeImage(data: imageData, with: item.identifier, for: index) { [weak self] in
+        self?.saveOnDatabase(for: index)
+      }
     } else {
       saveOnDatabase(for: index)
     }
   }
   
   private func removeFavourite(_ item: AdCellPresenterRepresentable, index: Int) {
-    dependencies.database.get(by: item.identifier) { result in
+    dependencies.database.get(by: item.identifier) { [weak self] result in
       switch result {
       case .success(let ad):
-        self.removeImage(item.identifier)
-        self.removeFromDatabase(ad, index: index)
+        self?.removeImage(item.identifier)
+        self?.removeFromDatabase(ad, index: index)
       case .failure(let err):
         print(err.description)
       }
     }
   }
   
-  private func storeImage(data: Data, with identifier: String, for index: Int) {
+  private func storeImage(data: Data, with identifier: String, for index: Int, _ completion: @escaping () -> Void) {
     dependencies.fileManager.write(data, for: identifier) { result in
       switch result {
       case .success:
-        self.saveOnDatabase(for: index)
+        print("Image saved")
+        completion()
       case .failure(let err):
         print(err)
-        self.saveOnDatabase(for: index)
+        completion()
       }
     }
   }
@@ -198,11 +202,11 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     if allAdsContainer.isEmpty || index > allAdsContainer.count { return }
     let normalAd = allAdsContainer[index]
     let favouriteAd = FavouriteAd(normalAd: normalAd)
-    dependencies.database.create(favouriteAd) { result in
+    dependencies.database.create(favouriteAd) { [weak self] result in
       switch result {
       case .success:
         print("Created new favourite")
-        self.didUpdateFavourite?(index)
+        self?.didUpdateFavourite?(index)
       case .failure(let err):
         print(err.description)
       }
@@ -221,11 +225,11 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   }
   
   private func removeFromDatabase(_ favouriteAd: FavouriteAd, index: Int) {
-    dependencies.database.delete(favouriteAd, { result in
+    dependencies.database.delete(favouriteAd, { [weak self] result in
       switch result {
       case .success:
         print("Removed favourite from DB")
-        self.didUpdateFavourite?(index)
+        self?.didUpdateFavourite?(index)
       case .failure(let err):
         print(err.description)
       }

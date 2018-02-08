@@ -61,10 +61,10 @@ class AdCellPresenter: AdCellPresenterRepresentable {
   // MARK: - FUNCTIONS
   
   func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void) {
-    dependencies.network.downloadImage(for: uri) { result in
+    dependencies.network.downloadImage(for: uri) { [weak self] result in
       switch result {
       case .success(let data):
-        self.dependencies.cache.add(data, for: uri)
+        self?.dependencies.cache.add(data, for: uri)
         completion(.success(data))
       case .failure:
         completion(.failure(NetworkError.noImage))
