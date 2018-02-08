@@ -10,7 +10,7 @@ import Foundation
 
 protocol FileManagerProviderRepresentable {
   func load(from identifier: String, _ completion: @escaping (Result<Data, FileManagerError>) -> Void)
-  func write(_ data: Data, for identifier: String, _ completion: @escaping (Result<URL, FileManagerError>) -> Void)
+  func write(_ data: Data, for identifier: String, _ completion: @escaping (Result<Void, FileManagerError>) -> Void)
   func delete(_ identifier: String, _ completion: @escaping (Result<Void, FileManagerError>) -> Void)
 }
 
@@ -49,11 +49,12 @@ class FileManagerProvider: FileManagerProviderRepresentable {
     }
   }
   
-  func write(_ data: Data, for identifier: String, _ completion: @escaping (Result<URL, FileManagerError>) -> Void) {
+  func write(_ data: Data, for identifier: String, _ completion: @escaping (Result<Void, FileManagerError>) -> Void) {
     let filename = getDocumentsDirectory.appendingPathComponent("\(identifier).png")
     do {
       try data.write(to: filename)
-      completion(.success(filename))
+      print(filename)
+      completion(.success(()))
     } catch {
       completion(.failure(FileManagerError.writing))
     }

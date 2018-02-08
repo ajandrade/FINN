@@ -110,8 +110,8 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   
   private func addFavourite(_ item: AdCellPresenterRepresentable, index: Int) {
     if let imageData = item.cachedData {
-      storeImage(data: imageData, with: item.identifier, for: index, { fileUrl in
-        self.saveOnDatabase(for: index, photoUrl: fileUrl)
+      storeImage(data: imageData, with: item.identifier, for: index, { _ in
+        self.saveOnDatabase(for: index)
       })
     } else {
       saveOnDatabase(for: index)
@@ -133,9 +133,8 @@ class AdsListPresenter: AdsListPresenterRepresentable {
   private func storeImage(data: Data, with identifier: String, for index: Int, _ completion: @escaping (URL) -> Void) {
     dependencies.fileManager.write(data, for: identifier) { result in
       switch result {
-      case .success(let fileUrl):
-        print(fileUrl)
-        self.saveOnDatabase(for: index, photoUrl: fileUrl)
+      case .success:
+        self.saveOnDatabase(for: index)
       case .failure(let err):
         print(err)
         self.saveOnDatabase(for: index)
@@ -143,7 +142,7 @@ class AdsListPresenter: AdsListPresenterRepresentable {
     }
   }
   
-  private func saveOnDatabase(for index: Int, photoUrl: URL? = nil) {
+  private func saveOnDatabase(for index: Int) {
     if allData.isEmpty || index > allData.count { return }
     let normalAd = allData[index]
     let favouriteAd = FavouriteAd(normalAd: normalAd)
