@@ -27,6 +27,7 @@
 		E04435A9202CEAA6001E4545 /* FavouriteAdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04435A8202CEAA6001E4545 /* FavouriteAdTests.swift */; };
 		E04435AD202E1599001E4545 /* CacheProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04435AC202E1599001E4545 /* CacheProviderTests.swift */; };
 		E04435AF202E1950001E4545 /* FileManagerProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04435AE202E1950001E4545 /* FileManagerProviderTests.swift */; };
+		E04435B1202E1D87001E4545 /* DatabaseProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04435B0202E1D87001E4545 /* DatabaseProviderTests.swift */; };
 		E05CC413202B79880017393C /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC412202B79880017393C /* DatabaseError.swift */; };
 		E05CC415202B810F0017393C /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC414202B810F0017393C /* RealmConfig.swift */; };
 		E05CC419202B89440017393C /* FileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC418202B89440017393C /* FileManagerError.swift */; };
@@ -104,6 +105,7 @@
 		E04435A8202CEAA6001E4545 /* FavouriteAdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAdTests.swift; sourceTree = "<group>"; };
 		E04435AC202E1599001E4545 /* CacheProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProviderTests.swift; sourceTree = "<group>"; };
 		E04435AE202E1950001E4545 /* FileManagerProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProviderTests.swift; sourceTree = "<group>"; };
+		E04435B0202E1D87001E4545 /* DatabaseProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProviderTests.swift; sourceTree = "<group>"; };
 		E05CC412202B79880017393C /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
 		E05CC414202B810F0017393C /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		E05CC418202B89440017393C /* FileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerError.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				E04435AC202E1599001E4545 /* CacheProviderTests.swift */,
 				E04435AE202E1950001E4545 /* FileManagerProviderTests.swift */,
+				E04435B0202E1D87001E4545 /* DatabaseProviderTests.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04435A9202CEAA6001E4545 /* FavouriteAdTests.swift in Sources */,
+				E04435B1202E1D87001E4545 /* DatabaseProviderTests.swift in Sources */,
 				E04435A7202CE964001E4545 /* AdsContainerTests.swift in Sources */,
 				E044359B202CE3C5001E4545 /* AdPriceTests.swift in Sources */,
 				E04435AD202E1599001E4545 /* CacheProviderTests.swift in Sources */,
