@@ -12,17 +12,22 @@ import XCTest
 class CacheProviderTests: XCTestCase {
   
   var cache: CacheProvider!
-  let key = "myKey"
-  let data = Data()
+  var key: String!
+  var data: Data!
 
   override func setUp() {
     super.setUp()
     cache = CacheProvider()
+    key = "myKey"
+    data = Data()
   }
   
   override func tearDown() {
     super.tearDown()
+    cache.clearCache()
     cache = nil
+    key = nil
+    data = nil
   }
   
   func testAddToCache() {
