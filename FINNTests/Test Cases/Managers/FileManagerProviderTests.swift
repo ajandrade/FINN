@@ -37,7 +37,9 @@ class FileManagerProviderTests: XCTestCase {
       case .success:
         self.fileManager.load(from: self.key, { result in
           switch result {
-          case .success: writeExpectation.fulfill()
+          case .success(let data):
+            XCTAssertNotNil(data)
+            writeExpectation.fulfill()
           case .failure: XCTFail()
           }
         })
