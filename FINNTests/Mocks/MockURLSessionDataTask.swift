@@ -9,6 +9,9 @@
 import Foundation
 
 class MockURLSessionDataTask: URLSessionDataTask {
+  
+  var isCancelled = false
+  var request: URLRequest?
   private let data: Data?
   private let urlResponse: URLResponse?
   private let responseError: Error?
@@ -23,13 +26,19 @@ class MockURLSessionDataTask: URLSessionDataTask {
     self.responseError = error
   }
   
+  override var originalRequest: URLRequest? {
+    return request
+  }
+  
   override func resume() {
     DispatchQueue.main.async() {
       self.completionHandler?(self.data, self.urlResponse, self.responseError)
     }
   }
   
-  override func cancel() { }
+  override func cancel() {
+    isCancelled = true
+  }
   
 }
 

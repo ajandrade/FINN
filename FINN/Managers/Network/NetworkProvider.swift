@@ -33,14 +33,11 @@ class NetworkProvider: NetworkProviderRepresentable {
   // MARK: - FUNCTIONS
   
   func getAds(_ completion: @escaping (Result<Data, NetworkError>) -> Void) {
-    let urlRequest: URLRequest
-    do {
-      urlRequest = try FINNAdsAPI.adsList.asURLRequest()
-    } catch {
+    guard let urlRequest = RequestBuilder.build(for: .ads) else {
       completion(.failure(NetworkError.wrongUrl(FINNAdsAPI.baseURLString)))
       return
     }
-    
+
     let task = session.dataTask(with: urlRequest) { responseData, response, _ in
       guard let response = response, let data = responseData else {
         completion(.failure(NetworkError.unknown))
@@ -61,10 +58,7 @@ class NetworkProvider: NetworkProviderRepresentable {
   }
   
   func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void) {
-    let urlRequest: URLRequest
-    do {
-      urlRequest = try FINNImageAPI.image(uri).asURLRequest()
-    } catch {
+    guard let urlRequest = RequestBuilder.build(for: .images(uri)) else {
       completion(.failure(NetworkError.wrongUrl(FINNImageAPI.baseURLString)))
       return
     }
@@ -83,7 +77,7 @@ class NetworkProvider: NetworkProviderRepresentable {
   }
   
   func cancelTask(for uri: String) {
-    guard let urlRequest = try? FINNImageAPI.image(uri).asURLRequest() else { return }
+    guard let urlRequest = RequestBuilder.build(for: .images(uri)) else { return }
     guard let taskIndex = tasks.index(where: { $0.originalRequest == urlRequest }) else { return }
     let task = tasks[taskIndex]
     task.cancel()

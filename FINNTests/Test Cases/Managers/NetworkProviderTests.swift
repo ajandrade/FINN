@@ -42,7 +42,7 @@ class NetworkProviderTests: XCTestCase {
   func testAdsRequestIsCorrect() {
     let endpoint = "https://gist.githubusercontent.com/3lvis/3799feea005ed49942dcb56386ecec2b/raw/63249144485884d279d55f4f3907e37098f55c74/discover.json"
     let urlRequest = URLRequest(url: URL(string: endpoint)!)
-    let endpointUrlRequest = try! FINNAdsAPI.adsList.asURLRequest()
+    let endpointUrlRequest = RequestBuilder.build(for: .ads)
     XCTAssertEqual(endpointUrlRequest, urlRequest)
   }
   
@@ -50,7 +50,7 @@ class NetworkProviderTests: XCTestCase {
     let someUri = "uri"
     let endpoint = "https://images.finncdn.no/dynamic/480x360c/\(someUri)"
     let urlRequest = URLRequest(url: URL(string: endpoint)!)
-    let endpointUrlRequest = try! FINNImageAPI.image(someUri).asURLRequest()
+    let endpointUrlRequest = RequestBuilder.build(for: .images(someUri))
     XCTAssertEqual(endpointUrlRequest, urlRequest)
   }
   
@@ -147,8 +147,8 @@ class NetworkProviderTests: XCTestCase {
   }
   
   func testSuccessfulRequestForImage() {
-    let urlResponse = createResponse(for: .images, for: .success)
-    mockSession = MockURLSession(data: testData, urlResponse: urlResponse, error: nil)
+    let urlResponse = createResponse(for: .images("uri"), for: .success)
+    mockSession = MockURLSession(data: Data(), urlResponse: urlResponse, error: nil)
     network = NetworkProvider(session: mockSession)
 
     let dataExpectation = expectation(description: "Success!")
@@ -165,16 +165,24 @@ class NetworkProviderTests: XCTestCase {
   }
   
   func testCancelTask() {
-    let dataTask = MockURLSessionDataTask(data: Data(), urlResponse: nil, error: nil)
-    
+    let taskUri = "uri"
+    let urlResponse = createResponse(for: .images(taskUri), for: .success)
+    mockSession = MockURLSession(data: Data(), urlResponse: urlResponse, error: nil)
+    network = NetworkProvider(session: mockSession)
+    XCTAssertFalse(mockSession.dataTask.isCancelled)
+    network.downloadImage(for: taskUri) { _ in }
+    XCTAssertFalse(mockSession.dataTask.isCancelled)
+    network.cancelTask(for: taskUri)
+    XCTAssertTrue(mockSession.dataTask.isCancelled)
   }
+  
 }
 
 extension NetworkProviderTests {
   
   enum State { case success, failure }
   
-  enum RequestType { case ads, images }
+  enum RequestType { case ads, images(String) }
   
   func loadJSONData() -> Data {
     let bundle = Bundle(for: type(of: self))
@@ -187,9 +195,9 @@ extension NetworkProviderTests {
     let request: URLRequest
     switch type {
     case .ads:
-      request = try! FINNAdsAPI.adsList.asURLRequest()
-    case .images:
-      request = try! FINNImageAPI.image("").asURLRequest()
+      request = RequestBuilder.build(for: .ads)!
+    case .images(let uri):
+      request = RequestBuilder.build(for: .images(uri))!
     }
     let url = request.url!
     let response: HTTPURLResponse

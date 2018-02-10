@@ -11,15 +11,14 @@ import Foundation
 
 class MockURLSession: URLSessionProtocol {
   
-  var request: URLRequest?
-  private let dataTask: MockURLSessionDataTask
+  let dataTask: MockURLSessionDataTask
   
   init(data: Data?, urlResponse: URLResponse?, error: Error?) {
     dataTask = MockURLSessionDataTask(data: data, urlResponse: urlResponse, error: error)
   }
   
   func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-    self.request = request
+    dataTask.request = request
     dataTask.completionHandler = completionHandler
     return dataTask
   }

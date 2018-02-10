@@ -67,6 +67,7 @@
 		E0C82DE9202F006200ED7513 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DE8202F006200ED7513 /* MockURLSession.swift */; };
 		E0C82DEB202F009D00ED7513 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DEA202F009D00ED7513 /* MockURLSessionDataTask.swift */; };
 		E0C82DEF202F011100ED7513 /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DEE202F011100ED7513 /* NetworkProviderTests.swift */; };
+		E0C82DF1202F198300ED7513 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF0202F198300ED7513 /* RequestBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		E0C82DE8202F006200ED7513 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		E0C82DEA202F009D00ED7513 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		E0C82DEE202F011100ED7513 /* NetworkProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
+		E0C82DF0202F198300ED7513 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +451,7 @@
 			children = (
 				E094065B2027A802008B5FAB /* APIs */,
 				E094061E20274A23008B5FAB /* NetworkProvider.swift */,
+				E0C82DF0202F198300ED7513 /* RequestBuilder.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				E094065020279DD8008B5FAB /* API.swift in Sources */,
 				E094064C20279D9E008B5FAB /* HTTPMethod.swift in Sources */,
 				E0443596202CDB74001E4545 /* Alertable.swift in Sources */,
+				E0C82DF1202F198300ED7513 /* RequestBuilder.swift in Sources */,
 				E094065D2027AA6B008B5FAB /* URLSessionProtocol.swift in Sources */,
 				E09406162027486A008B5FAB /* AdsListViewController.swift in Sources */,
 				E094064E20279DC4008B5FAB /* FINNAdsAPI.swift in Sources */,
