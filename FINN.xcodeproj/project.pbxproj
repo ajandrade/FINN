@@ -69,6 +69,8 @@
 		E0C82DEF202F011100ED7513 /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DEE202F011100ED7513 /* NetworkProviderTests.swift */; };
 		E0C82DF1202F198300ED7513 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF0202F198300ED7513 /* RequestBuilder.swift */; };
 		E0C82DF3202F205200ED7513 /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF2202F205200ED7513 /* RequestBuilderTests.swift */; };
+		E0C82DF5202F235600ED7513 /* MockAdCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF4202F235600ED7513 /* MockAdCellPresenter.swift */; };
+		E0C82DF7202F240900ED7513 /* AdCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF6202F240900ED7513 /* AdCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,8 @@
 		E0C82DEE202F011100ED7513 /* NetworkProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
 		E0C82DF0202F198300ED7513 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		E0C82DF2202F205200ED7513 /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
+		E0C82DF4202F235600ED7513 /* MockAdCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdCellPresenter.swift; sourceTree = "<group>"; };
+		E0C82DF6202F240900ED7513 /* AdCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,7 @@
 		E04435AB202E1582001E4545 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				E0C82DF6202F240900ED7513 /* AdCellTests.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 			children = (
 				E0C82DE8202F006200ED7513 /* MockURLSession.swift */,
 				E0C82DEA202F009D00ED7513 /* MockURLSessionDataTask.swift */,
+				E0C82DF4202F235600ED7513 /* MockAdCellPresenter.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -756,7 +762,9 @@
 				E04435A7202CE964001E4545 /* AdsContainerTests.swift in Sources */,
 				E044359B202CE3C5001E4545 /* AdPriceTests.swift in Sources */,
 				E04435AD202E1599001E4545 /* CacheProviderTests.swift in Sources */,
+				E0C82DF7202F240900ED7513 /* AdCellTests.swift in Sources */,
 				E04435A1202CE5C8001E4545 /* AdPhotoTests.swift in Sources */,
+				E0C82DF5202F235600ED7513 /* MockAdCellPresenter.swift in Sources */,
 				E0C82DE9202F006200ED7513 /* MockURLSession.swift in Sources */,
 				E04435AF202E1950001E4545 /* FileManagerProviderTests.swift in Sources */,
 				E04435A3202CE64E001E4545 /* NormalAdTests.swift in Sources */,
