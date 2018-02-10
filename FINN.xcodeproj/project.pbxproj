@@ -71,6 +71,9 @@
 		E0C82DF3202F205200ED7513 /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF2202F205200ED7513 /* RequestBuilderTests.swift */; };
 		E0C82DF5202F235600ED7513 /* MockAdCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF4202F235600ED7513 /* MockAdCellPresenter.swift */; };
 		E0C82DF7202F240900ED7513 /* AdCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF6202F240900ED7513 /* AdCellTests.swift */; };
+		E0CA61D7202F65DE0078D4A2 /* AdCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA61D6202F65DE0078D4A2 /* AdCellPresenterTests.swift */; };
+		E0CA61D9202F66440078D4A2 /* MockNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA61D8202F66440078D4A2 /* MockNetworkProvider.swift */; };
+		E0CA61DB202F67F70078D4A2 /* MockCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA61DA202F67F70078D4A2 /* MockCacheProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +164,9 @@
 		E0C82DF2202F205200ED7513 /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
 		E0C82DF4202F235600ED7513 /* MockAdCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdCellPresenter.swift; sourceTree = "<group>"; };
 		E0C82DF6202F240900ED7513 /* AdCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCellTests.swift; sourceTree = "<group>"; };
+		E0CA61D6202F65DE0078D4A2 /* AdCellPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCellPresenterTests.swift; sourceTree = "<group>"; };
+		E0CA61D8202F66440078D4A2 /* MockNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkProvider.swift; sourceTree = "<group>"; };
+		E0CA61DA202F67F70078D4A2 /* MockCacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCacheProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C82DF6202F240900ED7513 /* AdCellTests.swift */,
+				E0CA61D6202F65DE0078D4A2 /* AdCellPresenterTests.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -408,6 +415,8 @@
 				E0C82DE8202F006200ED7513 /* MockURLSession.swift */,
 				E0C82DEA202F009D00ED7513 /* MockURLSessionDataTask.swift */,
 				E0C82DF4202F235600ED7513 /* MockAdCellPresenter.swift */,
+				E0CA61D8202F66440078D4A2 /* MockNetworkProvider.swift */,
+				E0CA61DA202F67F70078D4A2 /* MockCacheProvider.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -757,10 +766,13 @@
 				E0C82DEF202F011100ED7513 /* NetworkProviderTests.swift in Sources */,
 				E04435A9202CEAA6001E4545 /* FavouriteAdTests.swift in Sources */,
 				E0C82DEB202F009D00ED7513 /* MockURLSessionDataTask.swift in Sources */,
+				E0CA61D9202F66440078D4A2 /* MockNetworkProvider.swift in Sources */,
 				E0C82DF3202F205200ED7513 /* RequestBuilderTests.swift in Sources */,
 				E04435B1202E1D87001E4545 /* DatabaseProviderTests.swift in Sources */,
+				E0CA61D7202F65DE0078D4A2 /* AdCellPresenterTests.swift in Sources */,
 				E04435A7202CE964001E4545 /* AdsContainerTests.swift in Sources */,
 				E044359B202CE3C5001E4545 /* AdPriceTests.swift in Sources */,
+				E0CA61DB202F67F70078D4A2 /* MockCacheProvider.swift in Sources */,
 				E04435AD202E1599001E4545 /* CacheProviderTests.swift in Sources */,
 				E0C82DF7202F240900ED7513 /* AdCellTests.swift in Sources */,
 				E04435A1202CE5C8001E4545 /* AdPhotoTests.swift in Sources */,
