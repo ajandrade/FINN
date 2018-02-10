@@ -68,6 +68,7 @@
 		E0C82DEB202F009D00ED7513 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DEA202F009D00ED7513 /* MockURLSessionDataTask.swift */; };
 		E0C82DEF202F011100ED7513 /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DEE202F011100ED7513 /* NetworkProviderTests.swift */; };
 		E0C82DF1202F198300ED7513 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF0202F198300ED7513 /* RequestBuilder.swift */; };
+		E0C82DF3202F205200ED7513 /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C82DF2202F205200ED7513 /* RequestBuilderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		E0C82DEA202F009D00ED7513 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		E0C82DEE202F011100ED7513 /* NetworkProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
 		E0C82DF0202F198300ED7513 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		E0C82DF2202F205200ED7513 /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 				E04435AE202E1950001E4545 /* FileManagerProviderTests.swift */,
 				E04435B0202E1D87001E4545 /* DatabaseProviderTests.swift */,
 				E0C82DEE202F011100ED7513 /* NetworkProviderTests.swift */,
+				E0C82DF2202F205200ED7513 /* RequestBuilderTests.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				E0C82DEF202F011100ED7513 /* NetworkProviderTests.swift in Sources */,
 				E04435A9202CEAA6001E4545 /* FavouriteAdTests.swift in Sources */,
 				E0C82DEB202F009D00ED7513 /* MockURLSessionDataTask.swift in Sources */,
+				E0C82DF3202F205200ED7513 /* RequestBuilderTests.swift in Sources */,
 				E04435B1202E1D87001E4545 /* DatabaseProviderTests.swift in Sources */,
 				E04435A7202CE964001E4545 /* AdsContainerTests.swift in Sources */,
 				E044359B202CE3C5001E4545 /* AdPriceTests.swift in Sources */,
