@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1EEB09CE2DAB503FF5B17C5E /* Pods_FINN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B32E4C856A37E16CF0A716 /* Pods_FINN.framework */; };
 		46A1BB6B2193CC51EA3BA665 /* Pods_FINNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725074B9036A79E8FE78DDC1 /* Pods_FINNTests.framework */; };
+		E005A95E202FA302004FEF0B /* AdsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005A95D202FA302004FEF0B /* AdsListViewControllerTests.swift */; };
+		E005A960202FA45E004FEF0B /* MockAdsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E005A95F202FA45E004FEF0B /* MockAdsListPresenter.swift */; };
 		E01FD8B62027434600152D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FD8B52027434600152D02 /* AppDelegate.swift */; };
 		E01FD8BD2027434600152D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01FD8BC2027434600152D02 /* Assets.xcassets */; };
 		E02A8B01202A33E9007C2C11 /* CacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A8B00202A33E9007C2C11 /* CacheProvider.swift */; };
@@ -93,6 +95,8 @@
 		725074B9036A79E8FE78DDC1 /* Pods_FINNTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FINNTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1AC1642FE9FB4FAC6EAC02 /* Pods-FINN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FINN/Pods-FINN.debug.xcconfig"; sourceTree = "<group>"; };
 		D2A77AAFD99ABFCF2DF9DE2E /* Pods-FINNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FINNTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FINNTests/Pods-FINNTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E005A95D202FA302004FEF0B /* AdsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsListViewControllerTests.swift; sourceTree = "<group>"; };
+		E005A95F202FA45E004FEF0B /* MockAdsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdsListPresenter.swift; sourceTree = "<group>"; };
 		E01FD8B22027434600152D02 /* FINN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FINN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01FD8B52027434600152D02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E01FD8BC2027434600152D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 			children = (
 				E0C82DF6202F240900ED7513 /* AdCellTests.swift */,
 				E0CA61D6202F65DE0078D4A2 /* AdCellPresenterTests.swift */,
+				E005A95D202FA302004FEF0B /* AdsListViewControllerTests.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				E0C82DF4202F235600ED7513 /* MockAdCellPresenter.swift */,
 				E0CA61D8202F66440078D4A2 /* MockNetworkProvider.swift */,
 				E0CA61DA202F67F70078D4A2 /* MockCacheProvider.swift */,
+				E005A95F202FA45E004FEF0B /* MockAdsListPresenter.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -767,6 +773,7 @@
 				E04435A9202CEAA6001E4545 /* FavouriteAdTests.swift in Sources */,
 				E0C82DEB202F009D00ED7513 /* MockURLSessionDataTask.swift in Sources */,
 				E0CA61D9202F66440078D4A2 /* MockNetworkProvider.swift in Sources */,
+				E005A95E202FA302004FEF0B /* AdsListViewControllerTests.swift in Sources */,
 				E0C82DF3202F205200ED7513 /* RequestBuilderTests.swift in Sources */,
 				E04435B1202E1D87001E4545 /* DatabaseProviderTests.swift in Sources */,
 				E0CA61D7202F65DE0078D4A2 /* AdCellPresenterTests.swift in Sources */,
@@ -774,6 +781,7 @@
 				E044359B202CE3C5001E4545 /* AdPriceTests.swift in Sources */,
 				E0CA61DB202F67F70078D4A2 /* MockCacheProvider.swift in Sources */,
 				E04435AD202E1599001E4545 /* CacheProviderTests.swift in Sources */,
+				E005A960202FA45E004FEF0B /* MockAdsListPresenter.swift in Sources */,
 				E0C82DF7202F240900ED7513 /* AdCellTests.swift in Sources */,
 				E04435A1202CE5C8001E4545 /* AdPhotoTests.swift in Sources */,
 				E0C82DF5202F235600ED7513 /* MockAdCellPresenter.swift in Sources */,
