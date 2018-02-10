@@ -69,7 +69,7 @@ class NetworkProvider: NetworkProviderRepresentable {
       return
     }
     
-    let task = URLSession.shared.dataTask(with: urlRequest) { data, _, _ in
+    let task = session.dataTask(with: urlRequest) { data, _, _ in
       if let `data` = data {
         DispatchQueue.main.async {
           completion(.success(data))
