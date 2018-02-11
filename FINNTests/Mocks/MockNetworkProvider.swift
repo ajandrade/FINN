@@ -17,7 +17,8 @@ class MockNetworkProvider: NetworkProviderRepresentable {
   
   func getAds(_ completion: @escaping (Result<Data, NetworkError>) -> Void) {
     getAdsIsCalled = true
-    completion(.success(Data()))
+    let data = loadJSONData()
+    completion(.success(data))
   }
   
   func downloadImage(for uri: String, _ completion: @escaping (Result<Data, NetworkError>) -> Void) {
@@ -27,6 +28,17 @@ class MockNetworkProvider: NetworkProviderRepresentable {
   
   func cancelTask(for uri: String) {
     cancelIsCalled = true
+  }
+  
+}
+
+extension MockNetworkProvider {
+  
+  func loadJSONData() -> Data {
+    let bundle = Bundle(for: type(of: self))
+    let path = bundle.path(forResource: "TestData", ofType: "json")!
+    let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+    return data
   }
   
 }
