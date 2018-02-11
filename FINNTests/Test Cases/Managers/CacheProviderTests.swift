@@ -11,9 +11,13 @@ import XCTest
 
 class CacheProviderTests: XCTestCase {
   
+  // MARK: - PROPERTIES
+
   var cache: CacheProvider!
   var key: String!
   var data: Data!
+
+  // MARK: - SETUP
 
   override func setUp() {
     super.setUp()
@@ -30,6 +34,8 @@ class CacheProviderTests: XCTestCase {
     data = nil
   }
   
+  // MARK: - TESTS
+
   func testAddToCache() {
     XCTAssertNil(cache.getData(forkey: key))
     cache.add(data, for: key)

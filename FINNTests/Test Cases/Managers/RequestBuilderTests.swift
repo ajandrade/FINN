@@ -11,6 +11,8 @@ import XCTest
 
 class RequestBuilderTests: XCTestCase {
   
+  // MARK: - SETUP
+
   override func setUp() {
     super.setUp()
   }
@@ -18,6 +20,8 @@ class RequestBuilderTests: XCTestCase {
   override func tearDown() {
     super.tearDown()
   }
+  
+  // MARK: - TESTS
   
   func testAdsAPIBaseUrlIsCorrect() {
     let correctBasePath = "https://gist.githubusercontent.com"

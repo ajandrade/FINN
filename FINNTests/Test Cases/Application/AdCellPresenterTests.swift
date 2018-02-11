@@ -9,14 +9,17 @@
 import XCTest
 @testable import FINN
 
-
 class AdCellPresenterTests: XCTestCase {
+  
+  // MARK: - PROPERTIES
   
   var presenter: AdCellPresenter!
   var cache: MockCacheProvider!
   var network: MockNetworkProvider!
   var dependencies: AllDependencies!
   
+  // MARK: - SETUP
+
   override func setUp() {
     super.setUp()
     network = MockNetworkProvider()
@@ -30,6 +33,8 @@ class AdCellPresenterTests: XCTestCase {
     network = nil
     cache = nil
   }
+  
+  // MARK: - TESTS
   
   func testIdentifierIsSetByAd() {
     let normalAd = NormalAd(identifier: "123", location: nil, adDescription: nil, price: nil, photoUri: nil, isFavourite: true)

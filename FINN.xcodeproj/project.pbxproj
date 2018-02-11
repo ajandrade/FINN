@@ -76,6 +76,7 @@
 		E0CA61D7202F65DE0078D4A2 /* AdCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA61D6202F65DE0078D4A2 /* AdCellPresenterTests.swift */; };
 		E0CA61D9202F66440078D4A2 /* MockNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA61D8202F66440078D4A2 /* MockNetworkProvider.swift */; };
 		E0CA61DB202F67F70078D4A2 /* MockCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA61DA202F67F70078D4A2 /* MockCacheProvider.swift */; };
+		E0DAE16B203058E200CB8593 /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAE16A203058E200CB8593 /* MockCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		E0CA61D6202F65DE0078D4A2 /* AdCellPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCellPresenterTests.swift; sourceTree = "<group>"; };
 		E0CA61D8202F66440078D4A2 /* MockNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkProvider.swift; sourceTree = "<group>"; };
 		E0CA61DA202F67F70078D4A2 /* MockCacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCacheProvider.swift; sourceTree = "<group>"; };
+		E0DAE16A203058E200CB8593 /* MockCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +425,7 @@
 				E0CA61D8202F66440078D4A2 /* MockNetworkProvider.swift */,
 				E0CA61DA202F67F70078D4A2 /* MockCacheProvider.swift */,
 				E005A95F202FA45E004FEF0B /* MockAdsListPresenter.swift */,
+				E0DAE16A203058E200CB8593 /* MockCollectionView.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				E04435A9202CEAA6001E4545 /* FavouriteAdTests.swift in Sources */,
 				E0C82DEB202F009D00ED7513 /* MockURLSessionDataTask.swift in Sources */,
 				E0CA61D9202F66440078D4A2 /* MockNetworkProvider.swift in Sources */,
+				E0DAE16B203058E200CB8593 /* MockCollectionView.swift in Sources */,
 				E005A95E202FA302004FEF0B /* AdsListViewControllerTests.swift in Sources */,
 				E0C82DF3202F205200ED7513 /* RequestBuilderTests.swift in Sources */,
 				E04435B1202E1D87001E4545 /* DatabaseProviderTests.swift in Sources */,

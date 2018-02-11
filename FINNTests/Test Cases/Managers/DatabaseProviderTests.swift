@@ -12,8 +12,12 @@ import RealmSwift
 
 class DatabaseProviderTests: XCTestCase {
   
+  // MARK: - PROPERTIES
+
   var database: DatabaseProvider!
   
+  // MARK: - SETUP
+
   override func setUp() {
     super.setUp()
     let testConfig = RealmConfig.test.configuration
@@ -25,6 +29,8 @@ class DatabaseProviderTests: XCTestCase {
     super.tearDown()
     database = nil
   }
+  
+  // MARK: - TESTS
   
   func testSaveOnDatabase() {
     let writeExpectation = expectation(description: "saved")

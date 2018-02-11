@@ -11,9 +11,13 @@ import XCTest
 
 class FileManagerProviderTests: XCTestCase {
   
+  // MARK: - PROPERTIES
+
   var fileManager: FileManagerProvider!
   var key: String!
   var data: Data!
+
+  // MARK: - SETUP
 
   override func setUp() {
     super.setUp()
@@ -30,6 +34,8 @@ class FileManagerProviderTests: XCTestCase {
     data = nil
   }
   
+  // MARK: - TESTS
+
   func testWriteAndLoadFile() {
     let writeExpectation = expectation(description: "saved")
     fileManager.write(data, for: key) { result in

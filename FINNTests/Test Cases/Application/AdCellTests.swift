@@ -11,7 +11,11 @@ import XCTest
 
 class AdCellTests: XCTestCase {
   
+  // MARK: - PROPERTIES
+  
   var cell: AdCell!
+  
+  // MARK: - SETUP
   
   override func setUp() {
     super.setUp()
@@ -23,6 +27,8 @@ class AdCellTests: XCTestCase {
     super.tearDown()
     cell = nil
   }
+  
+  // MARK: - TEST IBOUTLETS
   
   func testDownloadIndicatorViewIsConnected() {
     XCTAssertNotNil(cell.downloadIndicatorView)
@@ -60,6 +66,8 @@ class AdCellTests: XCTestCase {
     guard let actions = cell.favouriteButton.actions(forTarget: cell, forControlEvent: .touchUpInside) else { XCTFail(); return }
     XCTAssertTrue(actions.contains("onFavouritePressed:"))
   }
+  
+  // MARK: - TEST UI IS SET BY PRESENTER
   
   func testPriceLabelIsBeingSetByPresenter() {
     let presenter = MockAdCellPresenter()
@@ -112,6 +120,8 @@ class AdCellTests: XCTestCase {
     XCTAssertTrue(presenter.didDownloadImage)
     XCTAssertNotNil(cell.adImageView.image)
   }
+  
+  // MARK: - TEST IBACTIONS
   
   func testOnFavouriteButtonPressedToMakeFavourite() {
     let setFavouriteExpectation = expectation(description: "Is favourite")

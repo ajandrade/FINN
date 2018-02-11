@@ -11,9 +11,13 @@ import XCTest
 
 class NetworkProviderTests: XCTestCase {
   
+  // MARK: - PROPERTIES
+
   var network: NetworkProvider!
   var mockSession: MockURLSession!
   var testData: Data!
+
+  // MARK: - SETUP
 
   override func setUp() {
     super.setUp()
@@ -26,6 +30,8 @@ class NetworkProviderTests: XCTestCase {
     network = nil
     mockSession = nil
   }
+  
+  // MARK: - TESTS
   
   func testNoResponseErrorIsHandledForAds() {
     mockSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
