@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import FINN
 
 class AdsListPresenterTests: XCTestCase {
@@ -15,19 +16,29 @@ class AdsListPresenterTests: XCTestCase {
   
   var presenter: AdsListPresenter!
   var network: MockNetworkProvider!
+  var cache: MockCacheProvider!
+  var fileManager: MockFileManagerProvider!
+  var database: MockDatabaseProvider!
   
   // MARK: - SETUP
   
   override func setUp() {
     super.setUp()
     network = MockNetworkProvider()
-    let dependencies = DependencyContainer(network: network, fileManager: FileManagerProvider(), database: DatabaseProvider(nil), cache: MockCacheProvider())
+    cache = MockCacheProvider()
+    fileManager = MockFileManagerProvider()
+    database = MockDatabaseProvider(for: .success)
+    let dependencies = DependencyContainer(network: network, fileManager: fileManager, database: database, cache: cache)
     presenter = AdsListPresenter(dependencies: dependencies)
   }
   
   override func tearDown() {
     super.tearDown()
     presenter = nil
+    network = nil
+    cache = nil
+    fileManager = nil
+    database = nil
   }
   
   // MARK: - TESTS
@@ -74,10 +85,35 @@ class AdsListPresenterTests: XCTestCase {
     XCTAssertTrue(network.cancelIsCalled)
   }
   
-  func testSetFavourite() {
-    // item is set
-    // image stored // removed
-    // saved on db // deleted
+  func testSetFavouriteWithImage() {
+    presenter.loadInitialData { _ in }
+    let item = self.presenter.item(for: 0)
+    XCTAssertNotNil(item!.photoUri)
+    XCTAssertFalse(item!.isFavourite)
+    self.presenter.setFavourite(true, for: 0)
+    XCTAssertTrue(item!.isFavourite)
+    XCTAssertTrue(self.cache.getDataIsCalled)
+    XCTAssertTrue(self.database.createdIsCalled)
+  }
+  
+  func testSetFavouriteWithoutImage() {
+    presenter.loadInitialData { _ in }
+    let item = self.presenter.item(for: 1)
+    XCTAssertNil(item!.photoUri)
+    XCTAssertFalse(item!.isFavourite)
+    self.presenter.setFavourite(true, for: 1)
+    XCTAssertTrue(item!.isFavourite)
+    XCTAssertFalse(self.cache.getDataIsCalled)
+    XCTAssertTrue(self.database.createdIsCalled)
+  }
+  
+  func testSetUnfavourite() {
+    presenter.loadInitialData { _ in }
+    let item = self.presenter.item(for: 0)
+    self.presenter.setFavourite(false, for: 0)
+    XCTAssertFalse(item!.isFavourite)
+    XCTAssertTrue(self.fileManager.deleteIsCalled)
+    XCTAssertTrue(self.database.deletedIsCalled)
   }
   
   func testSwitchData() {

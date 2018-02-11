@@ -20,7 +20,7 @@ class MockCacheProvider: CacheProviderRepresentable {
   
   func getData(forkey key: String) -> Data? {
     getDataIsCalled = true
-    return nil
+    return Data()
   }
 
 }
