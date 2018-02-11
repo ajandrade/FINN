@@ -31,16 +31,18 @@ class AdsListViewController: UIViewController, Alertable {
     super.viewDidLoad()
     
     loadingView.startAnimating()
+    favouritesSwitch.isEnabled = false
     
     presenter.loadInitialData { [weak self] result in
-      self?.loadingView.stopAnimating()
-      switch result {
-      case .success:
-        DispatchQueue.main.async {
+      DispatchQueue.main.async {
+        self?.loadingView.stopAnimating()
+        self?.favouritesSwitch.isEnabled = true
+        switch result {
+        case .success:
           self?.collectionView.reloadData()
+        case .failure(let err):
+          self?.showAlert(with: err.message)
         }
-      case .failure(let err):
-        self?.showAlert(with: err.message)
       }
     }
     
