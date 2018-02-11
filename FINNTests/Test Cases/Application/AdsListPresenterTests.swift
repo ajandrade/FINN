@@ -116,9 +116,16 @@ class AdsListPresenterTests: XCTestCase {
     XCTAssertTrue(self.database.deletedIsCalled)
   }
   
-  func testSwitchData() {
-    // to favourites
-    // to normal
+  func testSwitchDataToFavourites() {
+    presenter.switchData(true) { _ in }
+    XCTAssertTrue(database.gotFavouritesFromDB)
+    XCTAssertFalse(network.getAdsIsCalled)
+  }
+  
+  func testSwitchDataToNormal() {
+    presenter.switchData(false) { _ in }
+    XCTAssertTrue(database.gotFavouritesFromDB)
+    XCTAssertTrue(network.getAdsIsCalled)
   }
   
 }

@@ -19,7 +19,8 @@ class MockDatabaseProvider: DatabaseProviderRepresentable {
   
   var createdIsCalled = false
   var deletedIsCalled = false
-
+  var gotFavouritesFromDB = false
+  
   init(for state: State) {
     self.state = state
   }
@@ -35,6 +36,7 @@ class MockDatabaseProvider: DatabaseProviderRepresentable {
   }
   
   func getAll(_ completion: @escaping (Result<FavouriteAds, DatabaseError>) -> Void) {
+    gotFavouritesFromDB = true
     switch state {
     case .success:
       completion(.failure(DatabaseError.noRealmFile))
